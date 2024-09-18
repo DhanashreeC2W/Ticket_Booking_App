@@ -41,7 +41,7 @@ class OnboardingWidget extends StatelessWidget {
             ),
             Center(
               child: SmoothPageIndicator(
-                    effect: WormEffect(
+                    effect: const WormEffect(
                       dotWidth: 61,
                       dotHeight: 6
                     ),
