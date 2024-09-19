@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:get/get.dart';
 import 'package:ticket_booking_app/controller/onboard_controller.dart';
-import 'package:ticket_booking_app/model/onboard_model.dart';
 import 'package:ticket_booking_app/view/widget/onboarding_widget.dart';
 
+///ONBOARDING SCREEN
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
   @override
@@ -11,12 +11,16 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+
+  ///CONTROLLER FOR PAGEVIEW
   final PageController _pageController = PageController();
-  OnboardController onboardController = OnboardController();
+
+  /// INITIALIZE THE ONBOARDCONTROLLER USING GETX
+  final OnboardController onboardController = Get.put(OnboardController());
   @override
   Widget build(BuildContext context) {
+
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
       body: Column(
         children: [

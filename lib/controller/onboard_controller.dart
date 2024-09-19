@@ -1,6 +1,10 @@
+import 'package:get/get.dart';
 import 'package:ticket_booking_app/model/onboard_model.dart';
 
-class OnboardController {
+///ONBOARDING CONTROLLER WITH GETX
+
+
+class OnboardController   {
   List<OnboardModel> onBoardItemsList = [
     const OnboardModel(
         img: "assets/images/onboarding2.png",

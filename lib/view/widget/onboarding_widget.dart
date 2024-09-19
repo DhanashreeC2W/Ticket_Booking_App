@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:ticket_booking_app/controller/onboard_controller.dart';
 
+///WIDGET FOR ONBOARDING SCREEN
 class OnboardingWidget extends StatelessWidget {
   final String img;
   final String text;
@@ -13,6 +13,8 @@ class OnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    ///HEIGHT AND WIDTH WITH MEDIAQUERY FOR RESPONSIVENESS
     final deviceHeight = MediaQuery.sizeOf(context).height;
     final deviceWidth = MediaQuery.sizeOf(context).width;
     log("${deviceHeight * 0.012}");
@@ -30,6 +32,7 @@ class OnboardingWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            ///IMAGE ON THE ONBOARDING SCREENS
             ClipRRect(
               borderRadius: BorderRadius.circular(21),
               child: Image.asset(
@@ -39,6 +42,7 @@ class OnboardingWidget extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
+            ///SMO0TH PAGE INDICATOR
             Center(
               child: SmoothPageIndicator(
                     effect: const WormEffect(
@@ -58,64 +62,80 @@ class OnboardingWidget extends StatelessWidget {
                 fontSize: deviceHeight * 0.048,
               ),
             ),
+            //ROW FOR SKIP AND NEXT BUTTON
             Row(
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: deviceHeight * 0.058, //48
-                  width: deviceWidth * 0.43, //167
-                  decoration: BoxDecoration(
-                    color: const Color.fromRGBO(255, 255, 255, 1),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    "Skip",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(37, 40, 49, 1),
-                      fontSize: deviceHeight * 0.019,
-                    ),
-                  ),
-                ),
-                Container(
+                ///SKIP BUTTON FOR NAVIGATING TO SIGN IN
+                GestureDetector(
+
+                  child: Container(
+                    alignment: Alignment.center,
                     height: deviceHeight * 0.058, //48
                     width: deviceWidth * 0.43, //167
                     decoration: BoxDecoration(
-                      color: const Color.fromRGBO(0, 100, 210, 1),
+                      color: const Color.fromRGBO(255, 255, 255, 1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      //crossAxisAlignment: CrossAxisAlignment.,
-                      children: [
-                        Text(
-                          "Next",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            color: const Color.fromRGBO(255, 255, 255, 1),
-                            fontSize: deviceHeight * 0.019,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: deviceWidth * 0.043,
-                          width: deviceWidth * 0.043,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
+                    child: Text(
+                      "Skip",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(37, 40, 49, 1),
+                        fontSize: deviceHeight * 0.019,
+                      ),
+                    ),
+                  ),
+                ),
+                ///NEXT BUTTON FOR NAVIGATING NEXT ONBOARDING SCREEN
+                GestureDetector(
+                  onTap: (){
+                    pageController.nextPage(
+                      duration: const Duration(milliseconds: 300), 
+                      curve: Curves.easeIn);
+                  },
+                  child: Container(
+                      height: deviceHeight * 0.058, //48
+                      width: deviceWidth * 0.43, //167
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 100, 210, 1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      ///ROW FOR TEXT AND ICON IN THE NEXT BUTTON
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        //crossAxisAlignment: CrossAxisAlignment.,
+                        children: [
+                          Text(
+                            // pageController.page!.toInt()==2?
+                            // "Get Started":
+                            "Next",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
                               color: const Color.fromRGBO(255, 255, 255, 1),
-                              borderRadius: BorderRadius.circular(100)),
-                          child: Icon(
-                            Icons.forward_rounded,
-                            color: const Color.fromRGBO(0, 100, 210, 1),
-                            size: deviceHeight * 0.013,
+                              fontSize: deviceHeight * 0.019,
+                            ),
                           ),
-                        ),
-                      ],
-                    )),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            height: deviceWidth * 0.043,
+                            width: deviceWidth * 0.043,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                color: const Color.fromRGBO(255, 255, 255, 1),
+                                borderRadius: BorderRadius.circular(100)),
+                            child: Icon(
+                              Icons.forward_rounded,
+                              color: const Color.fromRGBO(0, 100, 210, 1),
+                              size: deviceHeight * 0.013,
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
               ],
             ),
           ],

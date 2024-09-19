@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ticket_booking_app/view/onboard_screen.dart';
+import 'package:ticket_booking_app/view/signin_screen.dart';
+import 'package:ticket_booking_app/view/signup_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: SignUpScreen(),
     );
   }
 }
