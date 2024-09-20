@@ -11,7 +11,7 @@ class SigninSignupWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.sizeOf(context).height;
     final deviceWidth = MediaQuery.sizeOf(context).width;
-    log("${deviceWidth * 0.196}");
+    //log("${deviceWidth * 0.196}");
     return Padding(
       padding: EdgeInsets.only(
           top: deviceHeight * 0.023,
