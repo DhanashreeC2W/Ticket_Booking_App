@@ -25,39 +25,42 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
             left: deviceWidth * 0.04, //16
             right: deviceWidth * 0.04 //16
             ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset("assets/images/celebration.png"),
-            SizedBox(child: Column(
-              children: [
-                Text(
-              "Order confirmed",
-              style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w500,
-                  fontSize: deviceHeight * 0.035,
-                  color: const Color.fromRGBO(255, 255, 255, 1)),
-            ),
-            SizedBox(
-              width: deviceWidth,
-              child: Text(
-                "Thank you for your order. You will receive email confirmation shortly.",
-                textAlign: TextAlign.center,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset("assets/images/celebration.png"),
+              SizedBox(child: Column(
+                children: [
+                  Text(
+                "Order confirmed",
                 style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w500,
-                  color: const Color.fromRGBO(255, 255, 255, 1),
-                  fontSize: deviceHeight * 0.023,
+                    fontWeight: FontWeight.w500,
+                    fontSize: deviceHeight * 0.035,
+                    color: const Color.fromRGBO(255, 255, 255, 1)),
+              ),
+              SizedBox(
+                
+                width: deviceWidth,
+                child: Text(
+                  "Thank you for your order. You will receive email confirmation shortly.",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w500,
+                    color: const Color.fromRGBO(255, 255, 255, 1),
+                    fontSize: deviceHeight * 0.023,
+                  ),
                 ),
               ),
-            ),
-              ],
-            ),),
-            ButtonWidget(
-              buttonText: "See Details",
-              buttonColor: const Color.fromRGBO(255,255,255,1),
-              buttonIcon: null,
-            )
-          ],
+                ],
+              ),),
+              ButtonWidget(
+                buttonText: "See Details",
+                buttonColor: const Color.fromRGBO(255,255,255,1),
+                buttonIcon: null,
+              )
+            ],
+          ),
         ),
       ),
     );
