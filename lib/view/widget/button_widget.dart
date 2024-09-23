@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+///COMMON BUTTON WIDGET USED IN MULTIPLE SCREENS
 class ButtonWidget extends StatelessWidget {
   final String buttonText;
   final Icon? buttonIcon;
-  Color buttonColor;
+  final Color buttonColor;
 
-  ButtonWidget(
+  const ButtonWidget(
       {super.key,
       required this.buttonText,
-       this.buttonIcon,
+      this.buttonIcon,
       required this.buttonColor});
 
   @override
@@ -31,18 +32,22 @@ class ButtonWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.inter(
               fontWeight: FontWeight.w500,
-              color: buttonColor==const Color.fromRGBO(255,255,255,1)? const Color.fromRGBO(13,22,52,1):const Color.fromRGBO(255,255,255,1),
+              color: buttonColor == const Color.fromRGBO(255, 255, 255, 1)
+                  ? const Color.fromRGBO(13, 22, 52, 1)
+                  : const Color.fromRGBO(255, 255, 255, 1),
               fontSize: deviceHeight * 0.018,
             ),
           ),
           const SizedBox(
             width: 5,
           ),
-         buttonIcon==null?const SizedBox(): Icon(
-            buttonIcon!.icon,
-            color: Colors.white,
-            size: deviceWidth * 0.04,
-          ),
+          buttonIcon == null
+              ? const SizedBox()
+              : Icon(
+                  buttonIcon!.icon,
+                  color: Colors.white,
+                  size: deviceWidth * 0.04,
+                ),
         ],
       ),
     );

@@ -43,8 +43,7 @@ class SigninSignupWidget extends StatelessWidget {
 
           ///EMAIL AND PASSWORD TEXTFEILDS
           SizedBox(
-
-            height: signupSignin=="Sign In"? 170:80,
+            height: signupSignin == "Sign In" ? 170 : 80,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -77,33 +76,37 @@ class SigninSignupWidget extends StatelessWidget {
                 const SizedBox(
                   width: 14,
                 ),
-                signupSignin=="Sign In"?
-                Text(
-                  "PASSWORD",
-                  style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w400,
-                      fontSize: deviceHeight * 0.014,
-                      color: const Color.fromRGBO(128, 128, 128, 1)),
-                ):const SizedBox(),
-                signupSignin=="Sign In"?
-                Container(
-                  decoration: const BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(
-                              color: Color.fromRGBO(13, 22, 52, 0.05),
-                              width: 1))),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Enter Your Password",
-                      enabledBorder: InputBorder.none,
-                      hintStyle: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                        color: const Color.fromRGBO(13, 22, 52, 1),
-                        fontSize: deviceHeight * 0.023,
+                signupSignin == "Sign In"
+                    ? Text(
+                        "PASSWORD",
+                        style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: deviceHeight * 0.014,
+                            color: const Color.fromRGBO(128, 128, 128, 1)),
+                      )
+                    : const SizedBox(),
+                signupSignin == "Sign In"
+                    ? Container(
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    color: Color.fromRGBO(13, 22, 52, 0.05),
+                                    width: 1))),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: "Enter Your Password",
+                            enabledBorder: InputBorder.none,
+                            hintStyle: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              color: const Color.fromRGBO(13, 22, 52, 1),
+                              fontSize: deviceHeight * 0.023,
+                            ),
+                          ),
+                        ),
+                      )
+                    : const SizedBox(
+                        height: 0,
                       ),
-                    ),
-                  ),
-                ):const SizedBox(height: 0,),
               ],
             ),
           ),
@@ -180,19 +183,19 @@ class SigninSignupWidget extends StatelessWidget {
             child: Text.rich(TextSpan(children: [
               TextSpan(
                 text: "Don’t Have an Account?",
-                   style: GoogleFonts.inter(
-                    color: const Color.fromRGBO(37, 40, 49, 0.7),
-                    fontSize: deviceHeight * 0.023,
-                    fontWeight: FontWeight.w500,
-                  ),
+                style: GoogleFonts.inter(
+                  color: const Color.fromRGBO(37, 40, 49, 0.7),
+                  fontSize: deviceHeight * 0.023,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-                TextSpan(
+              TextSpan(
                 text: signupSignin,
-                   style: GoogleFonts.inter(
-                    color: const Color.fromRGBO(0,100,210,1),
-                    fontSize: deviceHeight * 0.023,
-                    fontWeight: FontWeight.w500,
-                  ),
+                style: GoogleFonts.inter(
+                  color: const Color.fromRGBO(0, 100, 210, 1),
+                  fontSize: deviceHeight * 0.023,
+                  fontWeight: FontWeight.w500,
+                ),
               )
             ])),
           )
