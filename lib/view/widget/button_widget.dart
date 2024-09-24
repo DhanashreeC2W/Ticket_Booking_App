@@ -6,12 +6,13 @@ class ButtonWidget extends StatelessWidget {
   final String buttonText;
   final Icon? buttonIcon;
   final Color buttonColor;
+  final bool? isFullWidth;
 
   const ButtonWidget(
       {super.key,
       required this.buttonText,
       this.buttonIcon,
-      required this.buttonColor});
+      required this.buttonColor,this.isFullWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ButtonWidget extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       height: deviceHeight * 0.053,
-      width: deviceWidth,
+      width: isFullWidth==true? deviceWidth:deviceWidth * 0.6810,
       decoration: BoxDecoration(
           color: buttonColor, borderRadius: BorderRadius.circular(8)),
       child: Row(

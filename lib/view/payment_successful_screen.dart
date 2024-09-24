@@ -54,9 +54,9 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
               ),
                 ],
               ),),
-              ButtonWidget(
+             const ButtonWidget(
                 buttonText: "See Details",
-                buttonColor: const Color.fromRGBO(255,255,255,1),
+                buttonColor:  Color.fromRGBO(255,255,255,1),
                 buttonIcon: null,
               )
             ],
