@@ -48,6 +48,7 @@ class ButtonWidget extends StatelessWidget {
                   buttonIcon!.icon,
                   color: Colors.white,
                   size: deviceWidth * 0.04,
+                  
                 ),
         ],
       ),

@@ -34,7 +34,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   return OnboardingWidget(
                       img: onboardController.onBoardItemsList[index].img,
                       pageController: _pageController,
-                      text: onboardController.onBoardItemsList[index].text);
+                      text: onboardController.onBoardItemsList[index].text,
+                      currentIndex: onboardController.onBoardItemsList[index].currentIndex,
+                      );
                 },
               ),
              

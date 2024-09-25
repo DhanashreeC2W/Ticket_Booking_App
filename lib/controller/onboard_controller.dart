@@ -8,14 +8,20 @@ class OnboardController   {
   List<OnboardModel> onBoardItemsList = [
     const OnboardModel(
         img: "assets/images/onboarding2.png",
-        text: "Explore \nThe Beautiful World!"),
+        text: "Explore \nThe Beautiful World!",
+        currentIndex: 0
+        ),
 
          const OnboardModel(
         img: "assets/images/onboarding1.png",
-        text: "Find Your Perfect Tickets To Fly"),
+        text: "Find \nYour Perfect Tickets To Fly",
+        currentIndex: 1,
+        ),
 
          const OnboardModel(
         img: "assets/images/onboarding3.png",
-        text: "Book Appointment in Easiest Way!"),
+        text: "Book Appointment \nin Easiest Way!",
+        currentIndex: 2
+        ),
   ];
 }

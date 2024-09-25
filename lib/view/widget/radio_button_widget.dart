@@ -1,7 +1,8 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+//COMMON RADIO BUTTON USED IN MULTIPLE TIMES
 
 class RadioButtonWidget extends StatefulWidget {
   final String? img;
@@ -35,13 +36,13 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     //log("${ deviceHeight * 0.019}");
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(
           widget.img!,
-          height: deviceHeight * 0.059,
-          width: deviceHeight * 0.036,
+          height: deviceHeight * 0.024,
+          width: deviceWidth * 0.059,
+          fit: BoxFit.fill,
         ),
          SizedBox(width: deviceWidth * 0.029,),
         Column(
@@ -50,7 +51,7 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
             Text(
               widget.title!,
               style: GoogleFonts.inter(
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
                 fontSize: deviceHeight * 0.015,
                 color: const Color.fromRGBO(13, 22, 52, 1),
               ),
@@ -71,7 +72,7 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
                   size: deviceHeight * 0.017,
                   color: widget.subIcon!.color,
                 ),
-                 SizedBox(width:deviceWidth * 0.015,),
+                 SizedBox(width:deviceWidth * 0.01,),
                 Text(
                   widget.subTitle!,
                   style: GoogleFonts.inter(

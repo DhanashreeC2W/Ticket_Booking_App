@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/widget/button_widget.dart';
 
+///SCREEN AFTER ENTERING PASSCODE
 class PaymentSuccessfulScreen extends StatefulWidget {
   const PaymentSuccessfulScreen({super.key});
 
@@ -27,36 +28,44 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
             ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              ///CELEBRATION IMAGE
               Image.asset("assets/images/celebration.png"),
-              SizedBox(child: Column(
+              SizedBox(
+                height: deviceHeight * 0.05,
+              ),
+              Column(
                 children: [
+                  ///ORDER CONFIRM TEXT
                   Text(
-                "Order confirmed",
-                style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w500,
-                    fontSize: deviceHeight * 0.035,
-                    color: const Color.fromRGBO(255, 255, 255, 1)),
+                    "Order confirmed",
+                    style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        fontSize: deviceHeight * 0.035,
+                        color: const Color.fromRGBO(255, 255, 255, 1)),
+                  ),
+                  SizedBox(
+                height: deviceHeight * 0.03,
+              ),
+                  Text(
+                    "Thank you for your order. You will receive email confirmation shortly.",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      color: const Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: deviceHeight * 0.023,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
-                
-                width: deviceWidth,
-                child: Text(
-                  "Thank you for your order. You will receive email confirmation shortly.",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w500,
-                    color: const Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: deviceHeight * 0.023,
-                  ),
-                ),
+                height: deviceHeight * 0.05,
               ),
-                ],
-              ),),
-             const ButtonWidget(
+              ///SEE DETAILS BUTTON
+              const ButtonWidget(
                 buttonText: "See Details",
-                buttonColor:  Color.fromRGBO(255,255,255,1),
+                buttonColor: Color.fromRGBO(255, 255, 255, 1),
                 buttonIcon: null,
               )
             ],

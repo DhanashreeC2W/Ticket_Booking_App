@@ -1,6 +1,13 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/payment_details_screen.dart';
+import 'package:ticket_booking_app/view/signin_screen.dart';
+import 'package:ticket_booking_app/view/widget/button_widget.dart';
+
+import '../signup_screen.dart';
 
 class SigninSignupWidget extends StatelessWidget {
   final String signupSignin;
@@ -10,16 +17,15 @@ class SigninSignupWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.sizeOf(context).height;
     final deviceWidth = MediaQuery.sizeOf(context).width;
-    //log("${deviceWidth * 0.196}");
+    log("${deviceHeight * 0.0}");
     return Padding(
       padding: EdgeInsets.only(
-          top: deviceHeight * 0.023,
+          top: deviceHeight * 0.02,
           left: deviceWidth * 0.04, //16
           right: deviceWidth * 0.04 //16
           ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ///SIGN IN OR SIGN UP TEXT
           Text(
@@ -30,6 +36,9 @@ class SigninSignupWidget extends StatelessWidget {
               fontSize: deviceHeight * 0.045,
             ),
           ),
+          SizedBox(
+            height: deviceHeight * 0.012,
+          ),
 
           ///HEADERLINE
           Text(
@@ -38,6 +47,9 @@ class SigninSignupWidget extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontSize: deviceHeight * 0.016,
                 color: const Color.fromRGBO(128, 128, 128, 1)),
+          ),
+          SizedBox(
+            height: deviceHeight * 0.042,
           ),
 
           ///EMAIL AND PASSWORD TEXTFEILDS
@@ -75,6 +87,8 @@ class SigninSignupWidget extends StatelessWidget {
                 const SizedBox(
                   width: 14,
                 ),
+
+                ///PASSWORD TEXTFEILD ONLY ON SIGN IN SCREEN
                 signupSignin == "Sign In"
                     ? Text(
                         "PASSWORD",
@@ -109,35 +123,19 @@ class SigninSignupWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            alignment: Alignment.center,
-            height: deviceHeight * 0.053,
-            width: deviceWidth,
-            decoration: BoxDecoration(
-                color: const Color.fromRGBO(0, 100, 210, 1),
-                borderRadius: BorderRadius.circular(8)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  signupSignin,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w500,
-                    color: const Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: deviceHeight * 0.018,
-                  ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Icon(
-                  Icons.check_circle,
-                  color: Colors.white,
-                  size: deviceWidth * 0.04,
-                ),
-              ],
-            ),
+          SizedBox(
+            height: deviceHeight * 0.052,
+          ),
+          GestureDetector(
+              onTap: () => Get.to(() => const PaymentDetailsScreen()),
+              child: ButtonWidget(
+                buttonText: signupSignin,
+                buttonColor: const Color.fromRGBO(0, 100, 210, 1),
+                isFullWidth: true,
+                buttonIcon: const Icon(Icons.check_circle),
+              )),
+          SizedBox(
+            height: deviceHeight * 0.042,
           ),
           Center(
             child: Text.rich(TextSpan(children: [
@@ -167,36 +165,62 @@ class SigninSignupWidget extends StatelessWidget {
               ),
             ])),
           ),
+          SizedBox(
+            height: deviceHeight * 0.042,
+          ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Image.asset("assets/images/fb.png",
-                  height: deviceHeight * 0.091, width: deviceWidth * 0.196),
-              Image.asset("assets/images/google.png",
-                  height: deviceHeight * 0.091, width: deviceWidth * 0.196),
-              Image.asset("assets/images/apple.png",
-                  height: deviceHeight * 0.091, width: deviceWidth * 0.196),
+              Image.asset(
+                "assets/images/fb.png",
+                //height: deviceHeight * 0.091, width: deviceWidth * 0.196
+              ),
+              SizedBox(
+                height: deviceHeight * 0.042,
+              ),
+              Image.asset(
+                "assets/images/google.png",
+              ),
+              SizedBox(
+                height: deviceHeight * 0.042,
+              ),
+              Image.asset(
+                "assets/images/apple.png",
+              ),
             ],
           ),
-          Center(
-            child: Text.rich(TextSpan(children: [
-              TextSpan(
-                text: "Don’t Have an Account?",
-                style: GoogleFonts.inter(
-                  color: const Color.fromRGBO(37, 40, 49, 0.7),
-                  fontSize: deviceHeight * 0.023,
-                  fontWeight: FontWeight.w500,
+          SizedBox(
+            height: deviceHeight * 0.042,
+          ),
+          GestureDetector(
+            onTap: () {
+              signupSignin == "Sign Up"
+                  ? Get.to(() => const SigninScreen())
+                  : Get.to(() => const SignUpScreen());
+            },
+            child: Center(
+              child: Text.rich(TextSpan(children: [
+                TextSpan(
+                  text: signupSignin == "Sign In"
+                      ? "Don’t Have an account?"
+                      : "Already have an account?",
+                  style: GoogleFonts.inter(
+                    color: const Color.fromRGBO(37, 40, 49, 0.7),
+                    fontSize: deviceHeight * 0.023,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-              TextSpan(
-                text: signupSignin,
-                style: GoogleFonts.inter(
-                  color: const Color.fromRGBO(0, 100, 210, 1),
-                  fontSize: deviceHeight * 0.023,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
-            ])),
+                TextSpan(
+                  text: signupSignin == "Sign In" ? " Sign Up" : " Sign In",
+                  style: GoogleFonts.inter(
+                    color: const Color.fromRGBO(0, 100, 210, 1),
+                    fontSize: deviceHeight * 0.023,
+                    fontWeight: FontWeight.w500,
+                  ),
+                )
+              ])),
+            ),
           )
         ],
       ),

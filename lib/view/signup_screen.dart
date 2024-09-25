@@ -13,9 +13,12 @@ class _SignUpScreenState extends State<SignUpScreen>{
 
   @override  
   Widget build(BuildContext context){
-    return const Scaffold(
-      backgroundColor: Color.fromRGBO(255,255,255,1),
-      body: SigninSignupWidget(signupSignin: "Sign Up"),
+    return  Scaffold(
+      backgroundColor: const Color.fromRGBO(255,255,255,1),
+      body: const SigninSignupWidget(signupSignin: "Sign Up"),
+       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(255,255,255,1),
+      ),
     );
   }
 
