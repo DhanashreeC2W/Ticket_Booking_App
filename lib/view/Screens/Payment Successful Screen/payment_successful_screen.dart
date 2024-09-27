@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Transaction%20Details%20Screen/transaction_details_screen.dart';
-import 'package:ticket_booking_app/view/widget/button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
 ///SCREEN AFTER ENTERING PASSCODE
 class PaymentSuccessfulScreen extends StatefulWidget {

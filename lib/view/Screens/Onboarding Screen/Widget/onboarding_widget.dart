@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:ticket_booking_app/view/signup_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Signup%20Signin%20Screen/signup_screen.dart';
 
 class OnboardingWidget extends StatelessWidget {
   final String img;

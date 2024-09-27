@@ -3,10 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/payment_successful_screen.dart';
-import 'package:ticket_booking_app/view/widget/back_button_widget.dart';
-import 'package:ticket_booking_app/view/widget/button_widget.dart';
-import 'package:ticket_booking_app/view/widget/radio_button_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
+import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/radio_button_widget.dart';
 
 class PaymentDetailsScreen extends StatefulWidget {
   const PaymentDetailsScreen({super.key});

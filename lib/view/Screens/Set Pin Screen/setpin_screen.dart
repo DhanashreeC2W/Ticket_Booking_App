@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_booking_app/view/widget/number_pin_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/number_pin_widget.dart';
 
 class SetpinScreen extends StatelessWidget {
   const SetpinScreen({super.key});

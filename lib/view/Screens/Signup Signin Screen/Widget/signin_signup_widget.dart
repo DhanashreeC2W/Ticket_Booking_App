@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/payment_details_screen.dart';
-import 'package:ticket_booking_app/view/signin_screen.dart';
-import 'package:ticket_booking_app/view/widget/button_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/payment_details_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Signup%20Signin%20Screen/signin_screen.dart';
+import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
 import '../signup_screen.dart';
 

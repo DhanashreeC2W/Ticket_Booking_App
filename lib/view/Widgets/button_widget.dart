@@ -12,7 +12,8 @@ class ButtonWidget extends StatelessWidget {
       {super.key,
       required this.buttonText,
       this.buttonIcon,
-      required this.buttonColor,this.isFullWidth});
+      required this.buttonColor,
+      this.isFullWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       height: deviceHeight * 0.053,
-      width: isFullWidth==true? deviceWidth:deviceWidth * 0.6810,
+      width: isFullWidth == true ? deviceWidth : deviceWidth * 0.6810,
       decoration: BoxDecoration(
           color: buttonColor, borderRadius: BorderRadius.circular(8)),
       child: Row(
@@ -46,9 +47,8 @@ class ButtonWidget extends StatelessWidget {
               ? const SizedBox()
               : Icon(
                   buttonIcon!.icon,
-                  color: buttonIcon!.color,
+                  color: Colors.white,
                   size: deviceWidth * 0.04,
-                  
                 ),
         ],
       ),

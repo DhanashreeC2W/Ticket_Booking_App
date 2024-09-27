@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ticket_booking_app/controller/onboard_controller.dart';
-import 'package:ticket_booking_app/view/widget/onboarding_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Onboarding%20Screen/Widget/onboarding_widget.dart';
 
 ///ONBOARDING SCREEN
 class OnBoardingScreen extends StatefulWidget {

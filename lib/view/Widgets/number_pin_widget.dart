@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/payment_successful_screen.dart';
-import 'package:ticket_booking_app/view/widget/back_button_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
+import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
 import 'dart:developer';
 
-import 'package:ticket_booking_app/view/widget/button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
 ///COMMON WIDGET FOR PIN
 class NumberPinWidget extends StatelessWidget {
