@@ -11,7 +11,6 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-
   ///CONTROLLER FOR PAGEVIEW
   final PageController _pageController = PageController();
 
@@ -19,30 +18,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final OnboardController onboardController = Get.put(OnboardController());
   @override
   Widget build(BuildContext context) {
-
     final deviceHeight = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: Column(
         children: [
           SizedBox(
             height: deviceHeight,
-            child: 
-              PageView.builder(
-                controller: _pageController,
-                itemCount: onboardController.onBoardItemsList.length,
-                itemBuilder: (context, index) {
-                  return OnboardingWidget(
-                      img: onboardController.onBoardItemsList[index].img,
-                      pageController: _pageController,
-                      text: onboardController.onBoardItemsList[index].text,
-                      currentIndex: onboardController.onBoardItemsList[index].currentIndex,
-                      );
-                },
-              ),
-             
-            
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: onboardController.onBoardItemsList.length,
+              itemBuilder: (context, index) {
+                return OnboardingWidget(
+                  img: onboardController.onBoardItemsList[index].img,
+                  pageController: _pageController,
+                  text: onboardController.onBoardItemsList[index].text,
+                  currentIndex:
+                      onboardController.onBoardItemsList[index].currentIndex,
+                );
+              },
+            ),
           ),
-         
         ],
       ),
     );

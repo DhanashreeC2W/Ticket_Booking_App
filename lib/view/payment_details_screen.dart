@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/payment_successful_screen.dart';
 import 'package:ticket_booking_app/view/widget/back_button_widget.dart';
 import 'package:ticket_booking_app/view/widget/button_widget.dart';
 import 'package:ticket_booking_app/view/widget/radio_button_widget.dart';
@@ -151,10 +153,15 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                       ],
                     ),
                     const Spacer(),
-                    const ButtonWidget(
-                      buttonText: "Proceed The Payment",
-                      buttonColor: Color.fromRGBO(0, 100, 210, 1),
-                      buttonIcon: Icon(Icons.check_circle),
+                    GestureDetector(
+                      onTap:(){
+                        Get.to(()=>const PaymentSuccessfulScreen());
+                      },
+                      child: const ButtonWidget(
+                        buttonText: "Proceed The Payment",
+                        buttonColor: Color.fromRGBO(0, 100, 210, 1),
+                        buttonIcon: Icon(Icons.check_circle),
+                      ),
                     )
                   ],
                 )

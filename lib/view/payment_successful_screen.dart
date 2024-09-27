@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Transaction%20Details%20Screen/transaction_details_screen.dart';
 import 'package:ticket_booking_app/view/widget/button_widget.dart';
 
 ///SCREEN AFTER ENTERING PASSCODE
@@ -63,11 +65,15 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
                 height: deviceHeight * 0.05,
               ),
               ///SEE DETAILS BUTTON
-              const ButtonWidget(
-                buttonText: "See Details",
-                buttonColor: Color.fromRGBO(255, 255, 255, 1),
-                buttonIcon: null,
-              )
+              GestureDetector(
+                onTap: () => Get.to(()=>const TransactionDetailsScreen()),
+                child: const ButtonWidget(
+                  buttonText: "See Details",
+                  isFullWidth: true,
+                  buttonColor: Color.fromRGBO(255, 255, 255, 1),
+                  buttonIcon: null,
+                ),
+              ),
             ],
           ),
         ),

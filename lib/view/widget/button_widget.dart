@@ -46,7 +46,7 @@ class ButtonWidget extends StatelessWidget {
               ? const SizedBox()
               : Icon(
                   buttonIcon!.icon,
-                  color: Colors.white,
+                  color: buttonIcon!.color,
                   size: deviceWidth * 0.04,
                   
                 ),
