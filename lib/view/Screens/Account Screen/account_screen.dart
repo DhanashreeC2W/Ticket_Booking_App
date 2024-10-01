@@ -10,7 +10,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    log("${deviceHeight * 0.016}");
+    log("${deviceHeight * 0.019}");
     return Scaffold(
       body: Column(
         children: [

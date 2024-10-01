@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  bulleted_list: ^0.0.1+0.1a
   flutter:
     sdk: flutter
   flutter_otp_text_field: ^1.2.0
