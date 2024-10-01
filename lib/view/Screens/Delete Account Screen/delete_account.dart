@@ -81,6 +81,7 @@ class _DeleteAccountState extends State<DeleteAccount> {
               ],
             ),
             const CheckboxWithButtonWidget(),
+            
           ],
         ),
       ),
