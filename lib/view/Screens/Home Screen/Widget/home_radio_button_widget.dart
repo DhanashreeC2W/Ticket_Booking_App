@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeRadioButtonWidget extends StatelessWidget {
   const HomeRadioButtonWidget({super.key});
@@ -8,7 +7,7 @@ class HomeRadioButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Radio(value: 1, groupValue: 0, onChanged: (value){})
+        Radio(value: 1, groupValue: 0, onChanged: (value) {}),
       ],
     );
   }
