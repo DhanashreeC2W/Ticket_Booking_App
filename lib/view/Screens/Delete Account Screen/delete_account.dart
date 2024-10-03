@@ -15,7 +15,6 @@ class DeleteAccount extends StatefulWidget {
 }
 
 class _DeleteAccountState extends State<DeleteAccount> {
-  
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.sizeOf(context).height;
@@ -32,7 +31,7 @@ class _DeleteAccountState extends State<DeleteAccount> {
           bottom: deviceHeight * 0.02, //26
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const BackButtonWidget(),
@@ -46,7 +45,7 @@ class _DeleteAccountState extends State<DeleteAccount> {
             ),
             Center(child: Image.asset("assets/images/delete_ac.png")),
             SizedBox(
-                width: deviceWidth * 0.49,
+                width: deviceWidth * 0.69,
                 child: Text(
                   "You sure want to delete your account?",
                   style: GoogleFonts.inter(
@@ -81,7 +80,6 @@ class _DeleteAccountState extends State<DeleteAccount> {
               ],
             ),
             const CheckboxWithButtonWidget(),
-            
           ],
         ),
       ),

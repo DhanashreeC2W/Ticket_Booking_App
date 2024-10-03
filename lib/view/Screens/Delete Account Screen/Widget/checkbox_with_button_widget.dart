@@ -17,6 +17,7 @@ class _CheckboxWithButtonWidgetState extends State<CheckboxWithButtonWidget> {
     if (isChecked == false) {
       return Colors.transparent;
     } else {
+      isChecked = true;
       return Colors.blue;
     }
   }
@@ -27,7 +28,7 @@ class _CheckboxWithButtonWidgetState extends State<CheckboxWithButtonWidget> {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     log("${deviceHeight * 0.018}");
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
@@ -42,7 +43,7 @@ class _CheckboxWithButtonWidgetState extends State<CheckboxWithButtonWidget> {
             ),
             SizedBox(
                 width: deviceWidth * 0.622,
-                height: deviceHeight * 0.045,
+                height: deviceHeight * 0.048,
                 child: Text(
                   "I understand and accept all the above risks regarding my acount deletion.",
                   style: GoogleFonts.inter(
@@ -53,22 +54,25 @@ class _CheckboxWithButtonWidgetState extends State<CheckboxWithButtonWidget> {
                 )),
           ],
         ),
-           Container(
-      alignment: Alignment.center,
-      height: deviceHeight * 0.053,
-      width:  deviceWidth,
-      decoration: BoxDecoration(
-          color: const Color.fromRGBO(218,235,255,1), borderRadius: BorderRadius.circular(8)),
-      child:Text("Yes,Continue",
-        style:  GoogleFonts.inter(
-              fontWeight: FontWeight.w500,
-              color: const Color.fromRGBO(255, 255, 255, 1),
-              fontSize: deviceHeight * 0.018,
-            ), 
-      )
-    )
+        const SizedBox(height: 20,),
+        Container(
+            alignment: Alignment.center,
+            height: deviceHeight * 0.053,
+            width: deviceWidth,
+            decoration: BoxDecoration(
+                color: isChecked == false
+                    ? const Color.fromRGBO(218, 235, 255, 1)
+                    : const Color.fromRGBO(0, 100, 210, 1),
+                borderRadius: BorderRadius.circular(8)),
+            child: Text(
+              "Yes,Continue",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.w500,
+                color: const Color.fromRGBO(255, 255, 255, 1),
+                fontSize: deviceHeight * 0.018,
+              ),
+            ))
       ],
     );
-    
   }
 }

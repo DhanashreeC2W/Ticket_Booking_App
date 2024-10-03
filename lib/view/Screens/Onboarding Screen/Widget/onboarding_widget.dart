@@ -77,7 +77,7 @@ class OnboardingWidget extends StatelessWidget {
             Row(
               children: [
                 /// SKIP BUTTON FOR NAVIGATING TO SIGN UP
-                GestureDetector(
+                GestureDetector(  
                   onTap: () {
                     /// NAVIGATE TO SIGNUPSCREEN ON SKIP
                     Get.to(() => const SignUpScreen());
