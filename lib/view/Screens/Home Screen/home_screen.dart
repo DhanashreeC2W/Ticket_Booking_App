@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final deviceHeight = MediaQuery.sizeOf(context).height;
     log("${deviceHeight * 0.038}");
     return Scaffold(
-        backgroundColor: Color.fromRGBO(0,100,210,1),
+        backgroundColor: const Color.fromRGBO(0, 100, 210, 1),
         //extendBodyBehindAppBar: true,
         body: Column(children: [
           Padding(
@@ -61,10 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             "Discover \na new world",
                             style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w700,
-                                color: const Color.fromRGBO(255, 255, 255, 1),
-                                fontSize: deviceHeight * 0.038,
-                                ),
+                              fontWeight: FontWeight.w700,
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              fontSize: deviceHeight * 0.038,
+                            ),
                           ))
                     ],
                   ),
@@ -73,7 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const HomescreenContainer()
-        
         ]));
   }
 }
