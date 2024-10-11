@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ticket_booking_app/view/Screens/Home%20Screen/Widget/home_radio_button_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Home%20Screen/Widget/trip_details_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Search%20Result%20Screen/search_result_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
 class HomescreenContainer extends StatefulWidget {
@@ -102,10 +104,15 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
                 icon: Icon(Icons.person_outline_rounded)),
 
             ///BUTTON WIDGET FOR SEARCH FLIGHTS BUTTON
-            const ButtonWidget(
-              buttonText: "Search flights",
-              buttonColor: Color.fromRGBO(0, 100, 210, 1),
-              isFullWidth: true,
+            GestureDetector(
+              onTap: (){
+                Get.to(SearchResultScreen());
+              },
+              child: const ButtonWidget(
+                buttonText: "Search flights",
+                buttonColor: Color.fromRGBO(0, 100, 210, 1),
+                isFullWidth: true,
+              ),
             ),
           ],
         ),

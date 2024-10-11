@@ -19,16 +19,22 @@ class SearchResultScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                 top: deviceHeight * 0.03,
-                left: deviceWidth * 0.04, //16
-                right: deviceWidth * 0.04, //16
+                left: deviceWidth * 0.05,
+                right: deviceWidth * 0.05,
               ),
               child: Column(
                 children: [
                   Row(
                     children: [
+                      ///BACK BUTTON
                       const BackButtonWidget(
                         isWhiteColor: true,
                       ),
+                      SizedBox(
+                        width: deviceWidth / 4.5,
+                      ),
+
+                      ///TOP NAME
                       Text(
                         "Search Flights",
                         style: GoogleFonts.inter(
@@ -43,16 +49,20 @@ class SearchResultScreen extends StatelessWidget {
                     height: 30,
                   ),
                   Container(
-                    height: deviceHeight,
+                    // height: double.infinity,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/Global Map.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
+
+                    ///LISTVIEW BUILDER TO SHOW SEARCH CARDS
                     child: ListView.builder(
-                        itemCount: 3,
+                        shrinkWrap: true,
+                        itemCount: 5,
                         itemBuilder: (context, index) {
+                          ///CARD WIDGET
                           return const SearchCardWidget();
                         }),
                   ),

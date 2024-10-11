@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Account%20Screen/Widgets/account_options_widgets.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -10,8 +11,9 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    log("${deviceHeight * 0.019}");
+    log("${deviceHeight * 0.014}");
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
           ///BLUE CONTAINER CONTAINIG USER INFO
@@ -71,7 +73,6 @@ class AccountScreen extends StatelessWidget {
                             fontSize: deviceHeight * 0.022, //20
                           ),
                         ),
-
                         ///EMAIL ID
                         Text(
                           "josphamdes@gmail.com",
@@ -81,7 +82,6 @@ class AccountScreen extends StatelessWidget {
                             fontSize: deviceHeight * 0.016, //14
                           ),
                         ),
-
                         ///CONTACT NUMBER
                         Text(
                           "+1 654 785 4462",
@@ -97,13 +97,45 @@ class AccountScreen extends StatelessWidget {
                       Icons.edit_square,
                       color: Color.fromRGBO(255, 255, 255, 1),
                       // size: deviceHeight * 0.019,
-                      fill: 1,
+                      //fill: 1,
                     ),
                   ],
                 ),
               ],
             ),
-          )
+          ),
+          const AccountOptionsWidgets(
+              optionIcon: Icon(Icons.navigation_outlined),
+              optionName: "My Order"),
+          const AccountOptionsWidgets(
+            optionIcon: Icon(Icons.percent_sharp),
+            optionName: "My Voucher",
+            showArrow: false,
+          ),
+          const AccountOptionsWidgets(
+              optionIcon: Icon(Icons.credit_card_rounded),
+              optionName: "Payment Methods"),
+          const AccountOptionsWidgets(
+              optionIcon: Icon(Icons.person_add_alt),
+              optionName: "Invite Friends"),
+          const AccountOptionsWidgets(
+            optionIcon: Icon(Icons.document_scanner_outlined),
+            optionName: "Quick Login",
+            isDivider: false,
+          ),
+          const AccountOptionsWidgets(
+              optionIcon: Icon(Icons.question_mark_outlined),
+              optionName: "My Order"),
+          const AccountOptionsWidgets(
+            optionIcon: Icon(Icons.settings_outlined),
+            optionName: "Settings",
+            isDivider: false,
+          ),
+          const AccountOptionsWidgets(
+            optionIcon: Icon(Icons.login_outlined),
+            optionName: "Log Out",
+            isDivider: false,
+          ),
         ],
       ),
     );

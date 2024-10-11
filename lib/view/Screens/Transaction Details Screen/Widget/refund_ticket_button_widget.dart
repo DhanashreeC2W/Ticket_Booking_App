@@ -13,7 +13,7 @@ class RefundTicketButtonWidget extends StatelessWidget {
       height: deviceHeight * 0.053,
       width: deviceWidth,
       margin: EdgeInsets.only(
-          top: deviceHeight * 0.021, bottom: deviceHeight /4.4),
+          top: deviceHeight * 0.021, bottom: deviceHeight /5),
       decoration: BoxDecoration(
           color: const Color.fromRGBO(252, 233, 233, 1),
           borderRadius: BorderRadius.circular(8)),
