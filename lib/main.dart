@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ticket_booking_app/view/Screens/Account%20Screen/account_screen.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/email_mobile_no_screen.dart';
-import 'package:ticket_booking_app/view/Screens/Transaction%20Screen/transaction_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/booking_details_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Settings%20Screens/notification_settings_screen.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TransactionScreen(),
+      home: BookingDetailsScreen(),
     );
   }
 }

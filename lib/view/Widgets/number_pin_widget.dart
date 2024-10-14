@@ -10,7 +10,9 @@ import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
 ///COMMON WIDGET FOR PIN
 class NumberPinWidget extends StatelessWidget {
-  final String pinType; ///PASSCODE , SETPIN ETC
+  final String pinType;
+
+  ///PASSCODE , SETPIN ETC
   final String subTitle;
 
   const NumberPinWidget(
@@ -82,23 +84,24 @@ class NumberPinWidget extends StatelessWidget {
               enabledBorderColor: Colors.transparent,
               focusedBorderColor: Colors.transparent,
               fillColor: const Color.fromRGBO(244, 244, 244, 1),
-              cursorColor: const Color.fromRGBO(13,13,13,0.1),
+              cursorColor: const Color.fromRGBO(13, 13, 13, 0.1),
             ),
-             SizedBox(
+            SizedBox(
               height: deviceHeight * 0.03,
             ),
-            ///CONDITION IF ITS PASSCODE SCREEN IT WILL GET ENTER BUTTON ELSE NOTING 
+
+            ///CONDITION IF ITS PASSCODE SCREEN IT WILL GET ENTER BUTTON ELSE NOTING
             pinType == "Passcode"
                 ? GestureDetector(
-                  onTap: (){
-                    Get.to(()=>const PaymentSuccessfulScreen());
-                  },
-                  child: const ButtonWidget(
+                    onTap: () {
+                      Get.to(() => const PaymentSuccessfulScreen());
+                    },
+                    child: const ButtonWidget(
                       buttonText: "Enter",
                       buttonColor: Color.fromRGBO(0, 100, 210, 1),
                       isFullWidth: true,
                     ),
-                )
+                  )
                 : const SizedBox(),
           ],
         ),
