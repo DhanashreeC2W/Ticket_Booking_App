@@ -56,6 +56,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
               height:deviceHeight * 0.09,
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ///TRANSACTION DETAILS USING WIDGETS
                 children: [
                   TransactionDetailsScreenWidget(
                     transactionDetail: "Status",
@@ -100,7 +101,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
               ),
             ),
             const RefundTicketButtonWidget(),
-            //const Spacer(),
+          
             GestureDetector(
               onTap: ()=>Get.to(()=>const HomeScreen()),
               child: const ButtonWidget(

@@ -81,6 +81,7 @@ class TopContainer extends StatelessWidget {
                         color: const Color.fromRGBO(13, 22, 52, 0.05),
                         width: 1),
                   ),
+
                   ///TO ROTATE FLIGHT ICON
                   child: Transform.rotate(
                     angle: 1.6,
@@ -175,7 +176,6 @@ class TopContainer extends StatelessWidget {
             ],
           ),
           Row(
-            //crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
                 height: deviceHeight * 0.022,

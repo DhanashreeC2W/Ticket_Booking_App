@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+///WIDGET FOR REFUND BUTTON IN TRANSACTION DETAILS SCREEN
 class RefundTicketButtonWidget extends StatelessWidget {
   const RefundTicketButtonWidget({super.key});
 
@@ -17,6 +17,7 @@ class RefundTicketButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: const Color.fromRGBO(252, 233, 233, 1),
           borderRadius: BorderRadius.circular(8)),
+          ///ROW FOR TEXT AND ICON IN THE CUSTOM BUTTON
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

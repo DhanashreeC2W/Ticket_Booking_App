@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widgets/payments_deatils_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
@@ -120,51 +121,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   selectedbutton: "Add",
                 ),
                 const Spacer(),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Subtotal",
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w400,
-                                color: const Color.fromRGBO(128, 128, 128, 1),
-                                fontSize: deviceHeight * 0.017,
-                              ),
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                              color: const Color.fromRGBO(0, 100, 210, 1),
-                              size: deviceHeight * 0.03,
-                            ),
-                          ],
-                        ),
-                        Text(
-                          "\$132",
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w600,
-                            color: const Color.fromRGBO(13, 22, 52, 1),
-                            fontSize: deviceHeight * 0.033,
-                          ),
-                        )
-                      ],
-                    ),
-                    const Spacer(),
-                    GestureDetector(
-                      onTap:(){
-                        Get.to(()=>const PaymentSuccessfulScreen());
-                      },
-                      child: const ButtonWidget(
-                        buttonText: "Proceed The Payment",
-                        buttonColor: Color.fromRGBO(0, 100, 210, 1),
-                        buttonIcon: Icon(Icons.check_circle),
-                      ),
-                    )
-                  ],
-                )
+                PaymentsDeatilsWidget(buttonName: "Proceed The Payment",)
               ]),
         ));
   }
