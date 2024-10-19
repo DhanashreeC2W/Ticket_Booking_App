@@ -7,7 +7,7 @@ import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widge
 import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
-import 'package:ticket_booking_app/view/Widgets/radio_button_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widgets/radio_button_widget.dart';
 
 class PaymentDetailsScreen extends StatefulWidget {
   const PaymentDetailsScreen({super.key});
@@ -17,6 +17,7 @@ class PaymentDetailsScreen extends StatefulWidget {
 }
 
 class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
+ 
   @override
   Widget build(BuildContext dd) {
     final deviceHeight = MediaQuery.sizeOf(context).height;
@@ -36,7 +37,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
               //mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const BackButtonWidget(),
-                SizedBox(height: deviceHeight * 0.04),
+                SizedBox(height: deviceHeight * 0.0),
                 Text(
                   "Digital payment method(s)",
                   style: GoogleFonts.inter(
@@ -121,7 +122,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   selectedbutton: "Add",
                 ),
                 const Spacer(),
-                PaymentsDeatilsWidget(buttonName: "Proceed The Payment",)
+                const PaymentsDeatilsWidget(buttonName: "Proceed The Payment",)
               ]),
         ));
   }

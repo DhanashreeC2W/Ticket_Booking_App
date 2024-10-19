@@ -36,7 +36,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
     ///MAIN CONTAINER
     return Container(
       width: deviceWidth,
-      height: deviceHeight * 0.054,
+      height: deviceHeight * 0.057,
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),

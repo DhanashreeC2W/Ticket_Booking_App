@@ -34,7 +34,8 @@ class ButtonWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.inter(
               fontWeight: FontWeight.w500,
-              color: buttonColor == const Color.fromRGBO(255, 255, 255, 1)
+              color: buttonColor == const Color.fromRGBO(255, 255, 255, 1) ||
+                      buttonColor == const Color.fromRGBO(242, 243, 246, 1)
                   ? const Color.fromRGBO(13, 22, 52, 1)
                   : const Color.fromRGBO(255, 255, 255, 1),
               fontSize: deviceHeight * 0.018,

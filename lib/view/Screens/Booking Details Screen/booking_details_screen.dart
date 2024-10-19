@@ -11,13 +11,34 @@ import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/setti
 import '../../Widgets/back_button_widget.dart';
 
 class BookingDetailsScreen extends StatelessWidget {
+  
   const BookingDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+   
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
     log("${deviceHeight * 0.016}");
+     void baggageBottomSheet(){
+      showModalBottomSheet(context: context, builder: (context){
+        return Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Center(
+                child: Container(
+                  width: deviceWidth*0.02,
+                  height: deviceHeight*0.01,
+                  color: const Color.fromRGBO(242,243,246,1),
+                ),
+              ),
+              
+            ],
+          ),
+        );
+      });
+    }
     return Scaffold(
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         body: Padding(
@@ -92,17 +113,22 @@ class BookingDetailsScreen extends StatelessWidget {
                   ///FACILITY CATEGORY
                   const SettingsBoldCatergoryWidget(
                       settingsCatergory: "Facility"),
-                  ContainerWidget(
-                    descr: "Add extra baggage",
-                    icon: Icon(
-                      Icons.add_rounded,
-                      size: deviceHeight * 0.03,
-                    ),
-                    data: "Baggage",
-                    textStyle: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(13, 22, 52, 1),
-                      fontSize: deviceHeight * 0.014,
+                  GestureDetector(
+                    onTap:() {
+                      baggageBottomSheet();
+                    },
+                    child: ContainerWidget(
+                      descr: "Add extra baggage",
+                      icon: Icon(
+                        Icons.add_rounded,
+                        size: deviceHeight * 0.03,
+                      ),
+                      data: "Baggage",
+                      textStyle: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(13, 22, 52, 1),
+                        fontSize: deviceHeight * 0.014,
+                      ),
                     ),
                   ),
 

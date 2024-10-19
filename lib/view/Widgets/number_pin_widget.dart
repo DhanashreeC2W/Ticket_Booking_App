@@ -31,16 +31,16 @@ class NumberPinWidget extends StatelessWidget {
         bottom: deviceHeight * 0.03,
       ),
       child: SizedBox(
-        height: 350,
+        height: deviceHeight * 0.4,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ///BACK BUTTON AT TOP OF THE SCREEN
             const BackButtonWidget(),
-            SizedBox(
-              height: deviceHeight * 0.05,
-            ),
+            // SizedBox(
+            //   height: deviceHeight * 0.04,
+            // ),
 
             ///HEADING TEXT
             Text(
@@ -86,9 +86,9 @@ class NumberPinWidget extends StatelessWidget {
               fillColor: const Color.fromRGBO(244, 244, 244, 1),
               cursorColor: const Color.fromRGBO(13, 13, 13, 0.1),
             ),
-            SizedBox(
-              height: deviceHeight * 0.03,
-            ),
+            // SizedBox(
+            //   height: deviceHeight * 0.03,
+            // ),
 
             ///CONDITION IF ITS PASSCODE SCREEN IT WILL GET ENTER BUTTON ELSE NOTING
             pinType == "Passcode"

@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ticket_booking_app/view/Screens/Home%20Screen/Widget/home_radio_button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/radio_button_with_text_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Home%20Screen/Widget/trip_details_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Search%20Result%20Screen/search_result_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
@@ -15,26 +15,30 @@ class HomescreenContainer extends StatefulWidget {
 }
 
 class _HomescreenContainerState extends State<HomescreenContainer> {
-  
+  int? _tripGroup;
   void dateBottomSheet() {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
           return Padding(
-
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
                 Expanded(
-                  child: Container(
-                   width: MediaQuery.sizeOf(context).width,
+                  child: SizedBox(
+                    width: MediaQuery.sizeOf(context).width,
                     child: DatePickerDialog(
-                     // helpText: "Select Date",
-                     currentDate: DateTime.now(),
-                        firstDate: DateTime(2024), lastDate: DateTime(2025)),
+                        // helpText: "Select Date",
+                        currentDate: DateTime.now(),
+                        firstDate: DateTime(2024),
+                        lastDate: DateTime(2025)),
                   ),
                 ),
-                const ButtonWidget(buttonText: "Search date", buttonColor:Color.fromRGBO(0,100,210,1),isFullWidth: true, )
+                const ButtonWidget(
+                  buttonText: "Search date",
+                  buttonColor: Color.fromRGBO(0, 100, 210, 1),
+                  isFullWidth: true,
+                )
               ],
             ),
           );
@@ -66,14 +70,20 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const HomeRadioButtonWidget(
-                  tripType: "One-way",
+                RadioButtonWithTextWidget(
+                  groupVal: _tripGroup,
+                  buttonVal: 0,
+                  buttonName: "One-way",
                 ),
                 SizedBox(
                   ///18
                   width: deviceWidth * 0.036,
                 ),
-                const HomeRadioButtonWidget(tripType: "Round-trip"),
+                RadioButtonWithTextWidget(
+                  buttonName: "Round-trip",
+                  groupVal: _tripGroup,
+                  buttonVal: 1,
+                ),
               ],
             ),
             SizedBox(
@@ -105,8 +115,8 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
 
             ///BUTTON WIDGET FOR SEARCH FLIGHTS BUTTON
             GestureDetector(
-              onTap: (){
-                Get.to(SearchResultScreen());
+              onTap: () {
+                Get.to(const SearchResultScreen());
               },
               child: const ButtonWidget(
                 buttonText: "Search flights",
