@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widgets/payments_deatils_widget.dart';
-import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
-import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widgets/radio_button_widget.dart';
 
 class PaymentDetailsScreen extends StatefulWidget {
@@ -17,11 +15,10 @@ class PaymentDetailsScreen extends StatefulWidget {
 }
 
 class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
- 
   @override
   Widget build(BuildContext dd) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
+    final deviceHeight = Get.height;
+    final deviceWidth = Get.width;
     log("${deviceHeight * 0.014}");
     return Scaffold(
         backgroundColor: const Color.fromRGBO(253, 253, 253, 1),
@@ -122,7 +119,9 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   selectedbutton: "Add",
                 ),
                 const Spacer(),
-                const PaymentsDeatilsWidget(buttonName: "Proceed The Payment",)
+                const PaymentsDeatilsWidget(
+                  buttonName: "Proceed The Payment",
+                )
               ]),
         ));
   }

@@ -4,24 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Contact%20Details%20Screen/Widget/info_container_widget.dart';
-import 'package:ticket_booking_app/view/Screens/Passenger%20Info%20Screen/passenger_info_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/radio_button_with_text_widget.dart';
 
 import '../../Widgets/back_button_widget.dart';
 
-class ContactDetailsScreen extends StatefulWidget {
-  const ContactDetailsScreen({super.key});
+class PassengerInfoScreen extends StatefulWidget {
+  const PassengerInfoScreen({super.key});
 
   @override
-  State<ContactDetailsScreen> createState() => _ContactDetailsScreenState();
+  State<PassengerInfoScreen> createState() => _PassengerInfoScreenState();
 }
 
-class _ContactDetailsScreenState extends State<ContactDetailsScreen> {
+class _PassengerInfoScreenState extends State<PassengerInfoScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _codeController = TextEditingController();
-  final TextEditingController _numberController = TextEditingController();
   final TextEditingController _idController = TextEditingController();
   int? _genderGroup;
   @override
@@ -49,7 +46,7 @@ class _ContactDetailsScreenState extends State<ContactDetailsScreen> {
 
               ///SCREEN NAME
               Text(
-                "Contact Person Details",
+                "Passenger Info",
                 style: GoogleFonts.inter(
                   fontWeight: FontWeight.w500,
                   color: const Color.fromRGBO(23, 24, 24, 1),
@@ -88,10 +85,6 @@ class _ContactDetailsScreenState extends State<ContactDetailsScreen> {
               InfoContainerWidget(
                   infoType: "Email Address", controller: _emailController),
               InfoContainerWidget(
-                  infoType: "Country code", controller: _codeController),
-              InfoContainerWidget(
-                  infoType: "Phone number", controller: _numberController),
-              InfoContainerWidget(
                   infoType: "ID card number", controller: _idController),
 
               ///MESSEGE AFTER INFORMATION CONTAINER
@@ -106,13 +99,10 @@ class _ContactDetailsScreenState extends State<ContactDetailsScreen> {
               ///SAVE CHANGES BUTTON
               Padding(
                 padding: EdgeInsets.only(top: deviceHeight * 0.05),
-                child: GestureDetector(
-                  onTap: () => Get.to(() => const PassengerInfoScreen()),
-                  child: const ButtonWidget(
-                    buttonText: "Save changes",
-                    buttonColor: Color.fromRGBO(0, 100, 210, 1),
-                    isFullWidth: true,
-                  ),
+                child: const ButtonWidget(
+                  buttonText: "Save changes",
+                  buttonColor: Color.fromRGBO(0, 100, 210, 1),
+                  isFullWidth: true,
                 ),
               )
             ],

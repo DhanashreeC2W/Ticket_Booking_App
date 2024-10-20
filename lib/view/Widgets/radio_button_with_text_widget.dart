@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 ///RADIO BUTTON WIDGET FOR HOME SCREEN
 class RadioButtonWithTextWidget extends StatefulWidget {
-  String buttonName;
-  int? groupVal;
-  int buttonVal;
-  RadioButtonWithTextWidget(
+  final String buttonName;
+   int? groupVal;
+  final int buttonVal;
+   RadioButtonWithTextWidget(
       {super.key,
       required this.buttonName,
       required this.buttonVal,
@@ -23,6 +23,7 @@ class _RadioButtonWithTextWidgetState extends State<RadioButtonWithTextWidget> {
     final deviceHeight = MediaQuery.sizeOf(context).height;
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Radio(
             activeColor: const Color.fromRGBO(206, 214, 221, 1),

@@ -9,6 +9,7 @@ import 'package:ticket_booking_app/view/Screens/Transaction%20Details%20Screen/W
 import 'package:ticket_booking_app/view/Screens/Transaction%20Details%20Screen/Widget/transaction_details_screen_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
+import 'package:ticket_booking_app/view/Widgets/total_container_widget.dart';
 
 class TransactionDetailsScreen extends StatefulWidget {
   const TransactionDetailsScreen({super.key});
@@ -23,7 +24,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    log("${deviceHeight * 0.03}");
+   // log("${deviceHeight * 0.03}");
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -74,34 +75,11 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
                 ],
               ),
             ),
-
-            Container(
-              width: deviceWidth,
-              height: deviceHeight * 0.086,
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              margin: EdgeInsets.only(
-                  top: deviceHeight * 0.021, bottom: deviceHeight * 0.021),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: const Color.fromRGBO(13, 22, 52, 0.05),
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TransactionDetailsScreenWidget(
-                      transactionDetail: "1. Matt Murdock",
-                      transactionDetailValue: "Rp. 210.000"),
-                  TransactionDetailsScreenWidget(
-                      transactionDetail: "Total",
-                      transactionDetailValue: "Rp. 210.000")
-                ],
-              ),
-            ),
+          ///TOTAL CONTAINER USING WIDGET
+           const TotalContainerWidget(),
+           ///BUTTON USING WIDGET
             const RefundTicketButtonWidget(),
-          
+          ///ENTER BUTTON NAVIGATES TO HOME SCREEN
             GestureDetector(
               onTap: ()=>Get.to(()=>const HomeScreen()),
               child: const ButtonWidget(
