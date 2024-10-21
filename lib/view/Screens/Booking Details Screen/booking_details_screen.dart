@@ -56,7 +56,7 @@ class BookingDetailsScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const BottomsheetWeightContainer(),
+                  //const BottomsheetWeightContainer(),
 
                   ///TOTAL CONTAINER USING WIDGET
                   const TotalContainerWidget(),

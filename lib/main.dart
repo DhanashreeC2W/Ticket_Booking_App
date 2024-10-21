@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/booking_details_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Contact%20Details%20Screen/contact_details_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/payment_details_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Select%20Seat%20Screen/select_seat_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Settings%20Screens/notification_settings_screen.dart';
 
 
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BookingDetailsScreen(),
+      home: SelectSeatScreen(),
     );
   }
 }
