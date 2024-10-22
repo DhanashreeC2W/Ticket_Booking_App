@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,9 +21,8 @@ class TransactionDetailsScreen extends StatefulWidget {
 class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-   // log("${deviceHeight * 0.03}");
+    final deviceWidth = Get.width;
+    final deviceHeight = Get.height;
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -37,11 +35,10 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
           top: deviceHeight * 0.03,
           left: deviceWidth * 0.04, //16
           right: deviceWidth * 0.04, //16
-          bottom: deviceHeight * 0.02,//26
+          bottom: deviceHeight * 0.02, //26
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ///HEADING OF THE SCREEN
             Text(
@@ -53,10 +50,11 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
               ),
             ),
             const TopContainer(),
-             SizedBox(
-              height:deviceHeight * 0.09,
+            SizedBox(
+              height: deviceHeight * 0.09,
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                 ///TRANSACTION DETAILS USING WIDGETS
                 children: [
                   TransactionDetailsScreenWidget(
@@ -75,13 +73,16 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
                 ],
               ),
             ),
-          ///TOTAL CONTAINER USING WIDGET
-           const TotalContainerWidget(),
-           ///BUTTON USING WIDGET
+
+            ///TOTAL CONTAINER USING WIDGET
+            const TotalContainerWidget(),
+
+            ///BUTTON USING WIDGET
             const RefundTicketButtonWidget(),
-          ///ENTER BUTTON NAVIGATES TO HOME SCREEN
+
+            ///ENTER BUTTON NAVIGATES TO HOME SCREEN
             GestureDetector(
-              onTap: ()=>Get.to(()=>const HomeScreen()),
+              onTap: () => Get.to(() => const HomeScreen()),
               child: const ButtonWidget(
                 buttonText: "Enter",
                 buttonColor: Color.fromRGBO(0, 100, 210, 1),

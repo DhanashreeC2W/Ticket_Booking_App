@@ -22,17 +22,19 @@ class _BottomsheetWeightContainerState
         : const Color.fromRGBO(255, 255, 255, 1);
   }
 
-  BookingDetailController bookingDetailController =
+  BookingDetailController bookingController =
       Get.put(BookingDetailController());
+    BookingDetailController bookingDetailController =
+      Get.find<BookingDetailController>();
   @override
   Widget build(BuildContext context) {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
     log("${deviceWidth * 0.0}");
-    return SizedBox(
+    return Obx((){ return SizedBox(
       width: deviceWidth,
       height: deviceHeight * 0.09,
-      child: Obx((){ return  ListView.builder(
+      child:   ListView.builder(
             itemCount: bookingDetailController.weightList.length,
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
@@ -74,8 +76,8 @@ class _BottomsheetWeightContainerState
                   ),
                 ),
               );
-            });}
+            }
       ),
-    );
+    );});
   }
 }

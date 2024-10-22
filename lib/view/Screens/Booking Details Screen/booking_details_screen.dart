@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/bottomsheet_weight_container.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/container_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/extra_protection_card_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/first_container_widget.dart';
@@ -11,7 +10,7 @@ import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widge
 import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/settings_bold_catergory_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/total_container_widget.dart';
-import '../../Widgets/back_button_widget.dart';
+import '../../Widgets/back_button_widget.dart';import 'Widgets/bottomsheet_weight_container.dart';
 
 class BookingDetailsScreen extends StatelessWidget {
   const BookingDetailsScreen({super.key});
@@ -56,7 +55,7 @@ class BookingDetailsScreen extends StatelessWidget {
                     ),
                   ),
 
-                  //const BottomsheetWeightContainer(),
+                  const BottomsheetWeightContainer(),
 
                   ///TOTAL CONTAINER USING WIDGET
                   const TotalContainerWidget(),
