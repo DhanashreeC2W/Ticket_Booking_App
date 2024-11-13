@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +14,7 @@ class NotificationSettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
-    log("${deviceHeight * 0.016}");
+   
     return Scaffold(
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         body: Padding(

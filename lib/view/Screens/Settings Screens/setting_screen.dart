@@ -22,7 +22,7 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    final deviceHeight =Get.height;
+    final deviceHeight = Get.height;
     final deviceWidth = Get.width;
     log("${deviceHeight * 0.016}");
     return Scaffold(
@@ -55,66 +55,85 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                     /// SETTINGS CATEGORY AND OPTIONS USING WIDGETS
                     const SettingsBoldCatergoryWidget(
-                        settingsCatergory:
-                            "General"), /// GENERAL SETTINGS CATEGORY
+                        settingsCatergory: "General"),
+
+                    /// GENERAL SETTINGS CATEGORY
                     GestureDetector(
                       onTap: () {
-                        Get.to(() =>
-                            const LanguageScreen()); /// NAVIGATES TO LANGUAGE SCREEN
+                        Get.to(() => const LanguageScreen());
+
+                        /// NAVIGATES TO LANGUAGE SCREEN
                       },
                       child: const AccountOptionsWidgets(
-                        optionName: "Language", /// OPTION TO CHANGE LANGUAGE
+                        optionName: "Language",
+
+                        /// OPTION TO CHANGE LANGUAGE
                         isSettingsScreen: true,
                       ),
                     ),
                     GestureDetector(
-                      onTap: (){
-                        Get.to(()=>const NotificationSettingsScreen());/// NAVIGATES TO NOTIFICATION SCREEN
+                      onTap: () {
+                        Get.to(() => const NotificationSettingsScreen());
+
+                        /// NAVIGATES TO NOTIFICATION SCREEN
                       },
                       child: const AccountOptionsWidgets(
-                        optionName:
-                            "Notification Settings", /// NOTIFICATION SETTINGS OPTION
+                        optionName: "Notification Settings",
+
+                        /// NOTIFICATION SETTINGS OPTION
                         isSettingsScreen: true,
                       ),
                     ),
-                    const SwitchButtonWidget(
-                        switchButtonText:
-                            "Location"), /// SWICTH FOR LOCATION SETTINGS
+                    const SwitchButtonWidget(switchButtonText: "Location"),
+
+                    /// SWICTH FOR LOCATION SETTINGS
                     const SettingsBoldCatergoryWidget(
-                        settingsCatergory:
-                            "Account & Security"), /// ACCOUNT & SECURITY CATEGORY
+                        settingsCatergory: "Account & Security"),
+
+                    /// ACCOUNT & SECURITY CATEGORY
                     GestureDetector(
-                      onTap: () => Get.to(() =>
-                          const EmailMobileNoScreen()), /// NAVIGATES TO EMAIL AND MOBILE NUMBER SCREEN
+                      onTap: () => Get.to(() => const EmailMobileNoScreen()),
+
+                      /// NAVIGATES TO EMAIL AND MOBILE NUMBER SCREEN
                       child: const AccountOptionsWidgets(
-                        optionName:
-                            "Email and Mobile Number", /// EMAIL AND MOBILE NUMBER SETTINGS OPTION
+                        optionName: "Email and Mobile Number",
+
+                        /// EMAIL AND MOBILE NUMBER SETTINGS OPTION
                         isSettingsScreen: true,
                       ),
                     ),
                     const AccountOptionsWidgets(
-                      optionName:
-                          "Security Settings", /// SECURITY SETTINGS OPTION
+                      optionName: "Security Settings",
+
+                      /// SECURITY SETTINGS OPTION
                       isSettingsScreen: true,
                     ),
                     const AccountOptionsWidgets(
-                      optionName: "Delete Account", /// DELETE ACCOUNT OPTION
+                      optionName: "Delete Account",
+
+                      /// DELETE ACCOUNT OPTION
                       isSettingsScreen: true,
                     ),
                     const SettingsBoldCatergoryWidget(
-                        settingsCatergory: "Other"), /// OTHER SETTINGS CATEGORY
+                        settingsCatergory: "Other"),
+
+                    /// OTHER SETTINGS CATEGORY
                     const AccountOptionsWidgets(
-                      optionName:
-                          "About Indochina Travel App", /// ABOUT INDOCHINA TRAVEL APP OPTION
+                      optionName: "About Indochina Travel App",
+
+                      /// ABOUT INDOCHINA TRAVEL APP OPTION
                       isSettingsScreen: true,
                     ),
                     const AccountOptionsWidgets(
-                      optionName: "Privacy Policy", /// PRIVACY POLICY OPTION
+                      optionName: "Privacy Policy",
+
+                      /// PRIVACY POLICY OPTION
                       isSettingsScreen: true,
                     ),
                     const AccountOptionsWidgets(
-                      optionName:
-                          "Terms and Conditions", /// TERMS AND CONDITIONS OPTION
+                      optionName: "Terms and Conditions",
+
+                      /// TERMS AND CONDITIONS OPTION
                       isSettingsScreen: true,
                     ),
 
