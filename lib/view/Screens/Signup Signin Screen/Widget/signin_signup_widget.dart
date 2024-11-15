@@ -1,9 +1,9 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/payment_details_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Home%20Screen/home_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Navigation%20Bar/navaigationbar.dart';
 import 'package:ticket_booking_app/view/Screens/Signup%20Signin%20Screen/signin_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
@@ -15,9 +15,9 @@ class SigninSignupWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    log("${deviceHeight * 0.0}");
+    final deviceHeight = Get.height;
+    final deviceWidth = Get.width;
+  
     return Padding(
       padding: EdgeInsets.only(
           top: deviceHeight * 0.02,
@@ -127,7 +127,7 @@ class SigninSignupWidget extends StatelessWidget {
             height: deviceHeight * 0.052,
           ),
           GestureDetector(
-              onTap: () => Get.to(() => const PaymentDetailsScreen()),
+              onTap: () => Get.to(() => const Navaigationbar()),
               child: ButtonWidget(
                 buttonText: signupSignin,
                 buttonColor: const Color.fromRGBO(0, 100, 210, 1),

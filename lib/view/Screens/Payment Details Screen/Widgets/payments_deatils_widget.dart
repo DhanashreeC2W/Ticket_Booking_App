@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Screens/Contact%20Details%20Screen/contact_details_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Passcode%20Screen/passcode_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Select%20Seat%20Screen/select_seat_screen.dart';
 
 import '../../../Widgets/button_widget.dart';
 
@@ -13,13 +11,14 @@ class PaymentsDeatilsWidget extends StatelessWidget {
   final String buttonName;
   const PaymentsDeatilsWidget({super.key, required this.buttonName});
 
-  /// BOTTOMSHEET ON TAP OF PROCEED THE PAYMENT BUTTON
+  /// BOTTOMSHEET ON THE TAP OF PROCEED THE PAYMENT BUTTON
   void openBottomSheet(
       BuildContext context, double deviceHeight, double deviceWidth) {
     showModalBottomSheet(
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         context: context,
         builder: (context) {
+          //PADDING FOR BOTTONSHEET
           return Padding(
             padding: EdgeInsets.only(
               bottom: deviceHeight * 0.017,
@@ -37,7 +36,11 @@ class PaymentsDeatilsWidget extends StatelessWidget {
                       color: const Color.fromARGB(255, 197, 197, 199),
                       borderRadius: BorderRadius.circular(10)),
                 ),
-                 SizedBox(height: deviceHeight*0.02,),
+                SizedBox(
+                  height: deviceHeight * 0.02,
+                ),
+
+                ///HEADING TEXT OF THE BOTTOMSHEET
                 Text(
                   "Continue with Touch ID to Proceed the payment",
                   textAlign: TextAlign.center,
@@ -47,9 +50,18 @@ class PaymentsDeatilsWidget extends StatelessWidget {
                     fontSize: deviceHeight * 0.027,
                   ),
                 ),
-                SizedBox(height: deviceHeight*0.02,),
+                SizedBox(
+                  height: deviceHeight * 0.02,
+                ),
+
+                ///FINGERPRINT IMAGE
                 SvgPicture.asset("assets/svg/finger.svg"),
-                 SizedBox(height: deviceHeight*0.05,),
+
+                SizedBox(
+                  height: deviceHeight * 0.05,
+                ),
+
+                ///BUTTON NAVIGATES TO PASSCODE SCREEN
                 GestureDetector(
                   onTap: () => Get.to(() => const PasscodeScreen()),
                   child: const ButtonWidget(
@@ -67,7 +79,6 @@ class PaymentsDeatilsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
-    log("${deviceHeight * 0.4}");
 
     ///ROW FOR SUBTOTAL AND BUTTON
     return Row(
@@ -94,6 +105,8 @@ class PaymentsDeatilsWidget extends StatelessWidget {
                 ),
               ],
             ),
+
+            ///TOTAL TEXT
             Text(
               "\$132",
               style: GoogleFonts.inter(
@@ -109,9 +122,12 @@ class PaymentsDeatilsWidget extends StatelessWidget {
         ///BUTTON
         GestureDetector(
           onTap: () {
+            ///IF IT IS PROCEED THE PAYMENT BUTTON USED ON PAYMENT DETAILS SCREEN IT WILL OPEN BOTTON SHEET
+            ///AND THIS WIDGET IS ALSO USED ON BOOKING DETAILS SCREEN
+            ///FOR THAT IT WILL NAVIGATE TO SELECT SEAT SCREEN
             buttonName == "Proceed The Payment"
                 ? openBottomSheet(context, deviceHeight, deviceWidth)
-                : Get.to(() =>  const ContactDetailsScreen());
+                : Get.to(() => const SelectSeatScreen());
           },
           child: ButtonWidget(
             buttonText: buttonName,

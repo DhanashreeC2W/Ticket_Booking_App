@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Confirm%20Pin%20Screen/confirm_pin_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Successful%20Screen/payment_successful_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
-import 'dart:developer';
 
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
@@ -19,9 +19,8 @@ class NumberPinWidget extends StatelessWidget {
       {super.key, required this.pinType, required this.subTitle});
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    log(" ${deviceHeight * 0.016}");
+    final deviceHeight = Get.height;
+    final deviceWidth = Get.width;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -38,9 +37,6 @@ class NumberPinWidget extends StatelessWidget {
           children: [
             ///BACK BUTTON AT TOP OF THE SCREEN
             const BackButtonWidget(),
-            // SizedBox(
-            //   height: deviceHeight * 0.04,
-            // ),
 
             ///HEADING TEXT
             Text(
@@ -78,17 +74,17 @@ class NumberPinWidget extends StatelessWidget {
 
             ///OTPTEXTFEILD WIDGET
             OtpTextField(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               numberOfFields: 6,
               showFieldAsBox: true,
+              autoFocus: true,
+              onSubmit: (value) => Get.to(() => const ConfirmPinScreen()),
               filled: true,
               enabledBorderColor: Colors.transparent,
               focusedBorderColor: Colors.transparent,
               fillColor: const Color.fromRGBO(244, 244, 244, 1),
               cursorColor: const Color.fromRGBO(13, 13, 13, 0.1),
             ),
-            // SizedBox(
-            //   height: deviceHeight * 0.03,
-            // ),
 
             ///CONDITION IF ITS PASSCODE SCREEN IT WILL GET ENTER BUTTON ELSE NOTING
             pinType == "Passcode"

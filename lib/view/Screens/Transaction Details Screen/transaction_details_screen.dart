@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,10 +25,6 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-        leading: const BackButtonWidget(),
-      ),
       body: Padding(
         padding: EdgeInsets.only(
           top: deviceHeight * 0.03,
@@ -40,6 +35,12 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ///BACK BUTTON
+            const BackButtonWidget(),
+            SizedBox(
+              height: deviceHeight * 0.04,
+            ),
+
             ///HEADING OF THE SCREEN
             Text(
               "Transaction Details",
@@ -57,6 +58,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
 
                 ///TRANSACTION DETAILS USING WIDGETS
                 children: [
+
                   TransactionDetailsScreenWidget(
                     transactionDetail: "Status",
                     transactionDetailValue: "Success",
@@ -80,7 +82,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
             ///BUTTON USING WIDGET
             const RefundTicketButtonWidget(),
 
-            ///ENTER BUTTON NAVIGATES TO HOME SCREEN
+            ///ENTER BUTTON WHICH NAVIGATES TO HOME SCREEN
             GestureDetector(
               onTap: () => Get.to(() => const HomeScreen()),
               child: const ButtonWidget(

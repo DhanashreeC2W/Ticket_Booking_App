@@ -18,7 +18,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final OnboardController onboardController = Get.put(OnboardController());
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
+    final deviceHeight = Get.height;
     return Scaffold(
       body: Column(
         children: [

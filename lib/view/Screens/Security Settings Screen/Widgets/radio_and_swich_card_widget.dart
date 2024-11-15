@@ -5,28 +5,29 @@ import 'package:google_fonts/google_fonts.dart';
 enum WidgetType { radio, switchType, arrow }
 
 class RadioAndSwichCardWidget extends StatefulWidget {
-  
   final String settingsCatergory;
   final String subCategory;
   final String description;
   final bool? isCategory;
   final int? radioValue;
-  final int groupValue;
+  final int? groupValue;
   final WidgetType widgetType;
   final ValueChanged<int?>? onRadioChanged;
   final ValueChanged<bool>? onSwitchChanged;
+  
 
   const RadioAndSwichCardWidget({
     super.key,
     this.radioValue,
     this.isCategory = true,
-    required this.groupValue,
+    this.groupValue,
     required this.subCategory,
     required this.description,
     required this.settingsCatergory,
     required this.widgetType,
     this.onRadioChanged,
     this.onSwitchChanged,
+   
   });
 
   @override
@@ -35,7 +36,9 @@ class RadioAndSwichCardWidget extends StatefulWidget {
 }
 
 class _RadioAndSwichCardWidgetState extends State<RadioAndSwichCardWidget> {
-  bool _isSwitchOn = false; // State for switch, if needed
+  bool _isSwitchOn = false;
+
+  /// STATE FOR SWITCH
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +56,26 @@ class _RadioAndSwichCardWidgetState extends State<RadioAndSwichCardWidget> {
         );
         break;
       case WidgetType.switchType:
-        trailingWidget = Switch(
-          value: _isSwitchOn,
-          onChanged: (value) {
-            setState(() {
-              _isSwitchOn = value;
-            });
-            if (widget.onSwitchChanged != null) {
-              widget.onSwitchChanged!(value);
-            }
-          },
+        trailingWidget = Transform.scale(
+          scaleY: 0.8,
+          scaleX: 0.8,
+          child: Switch(
+            activeColor: const Color.fromRGBO(255, 255, 255, 1),
+            activeTrackColor: const Color.fromRGBO(0, 100, 210, 1),
+            inactiveTrackColor: const Color.fromRGBO(13, 22, 52, 0.05),
+            inactiveThumbColor: const Color.fromRGBO(255, 255, 255, 1),
+            trackOutlineColor: const WidgetStatePropertyAll(Colors.transparent),
+            splashRadius: 0.5,
+            value: _isSwitchOn,
+            onChanged: (value) {
+              setState(() {
+                _isSwitchOn = value;
+              });
+              if (widget.onSwitchChanged != null) {
+                widget.onSwitchChanged!(value);
+              }
+            },
+          ),
         );
         break;
       case WidgetType.arrow:
@@ -75,6 +88,7 @@ class _RadioAndSwichCardWidgetState extends State<RadioAndSwichCardWidget> {
     }
 
     return Container(
+    height:   deviceHeight * 0.166,
       width: deviceWidth,
       padding: EdgeInsets.all(deviceHeight * 0.02),
       color: const Color.fromRGBO(255, 255, 255, 1),
@@ -82,6 +96,7 @@ class _RadioAndSwichCardWidgetState extends State<RadioAndSwichCardWidget> {
         children: [
           Expanded(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (!widget.isCategory!)
@@ -115,6 +130,7 @@ class _RadioAndSwichCardWidgetState extends State<RadioAndSwichCardWidget> {
                       fontWeight: FontWeight.w400,
                       fontSize: deviceHeight * 0.015),
                 ),
+              
               ],
             ),
           ),

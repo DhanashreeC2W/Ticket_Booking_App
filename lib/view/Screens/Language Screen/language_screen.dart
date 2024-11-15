@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/language_radio_button_widget.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/settings_bold_catergory_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Language%20Screen/Widgets/language_radio_button_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Settings%20Screen/Widgets/settings_bold_catergory_widget.dart';
 
 import '../../Widgets/back_button_widget.dart';
 

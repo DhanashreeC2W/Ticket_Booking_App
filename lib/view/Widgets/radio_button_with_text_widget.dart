@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ///RADIO BUTTON WIDGET FOR HOME SCREEN
+// ignore: must_be_immutable
 class RadioButtonWithTextWidget extends StatefulWidget {
   final String buttonName;
    int? groupVal;

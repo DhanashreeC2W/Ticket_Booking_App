@@ -6,11 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/container_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/extra_protection_card_widget.dart';
 import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/Widgets/first_container_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Passenger%20Info%20Screen/passenger_info_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/Widgets/payments_deatils_widget.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/settings_bold_catergory_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Settings%20Screen/Widgets/settings_bold_catergory_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/total_container_widget.dart';
-import '../../Widgets/back_button_widget.dart';import 'Widgets/bottomsheet_weight_container.dart';
+import '../../Widgets/back_button_widget.dart';
+import 'Widgets/bottomsheet_weight_container.dart';
 
 class BookingDetailsScreen extends StatelessWidget {
   const BookingDetailsScreen({super.key});
@@ -130,16 +132,21 @@ class BookingDetailsScreen extends StatelessWidget {
                       fontSize: deviceHeight * 0.014,
                     ),
                   ),
-                  ContainerWidget(
-                    icon: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: deviceWidth * 0.05,
-                    ),
-                    data: "Selena Kayle",
-                    textStyle: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(13, 22, 52, 1),
-                      fontSize: deviceHeight * 0.016,
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => const PassengerInfoScreen());
+                    },
+                    child: ContainerWidget(
+                      icon: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: deviceWidth * 0.05,
+                      ),
+                      data: "Selena Kayle",
+                      textStyle: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(13, 22, 52, 1),
+                        fontSize: deviceHeight * 0.016,
+                      ),
                     ),
                   ),
 

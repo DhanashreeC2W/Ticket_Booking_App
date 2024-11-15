@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Account%20Screen/Widgets/account_options_widgets.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/Widgets/settings_bold_catergory_widget.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/email_mobile_no_screen.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/language_screen.dart';
-import 'package:ticket_booking_app/view/Screens/Settings%20Screens/notification_settings_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Security%20Settings%20Screen/security_settings_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Settings%20Screen/Widgets/settings_bold_catergory_widget.dart';
+import 'package:ticket_booking_app/view/Screens/Email%20And%20Mobile%20Number%20Screen/email_mobile_no_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Language%20Screen/language_screen.dart';
+import 'package:ticket_booking_app/view/Screens/Notification%20Settings%20Screen/notification_settings_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/switch_button_widget.dart';
 
 import '../../Widgets/back_button_widget.dart';
@@ -102,11 +103,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         isSettingsScreen: true,
                       ),
                     ),
-                    const AccountOptionsWidgets(
-                      optionName: "Security Settings",
+                    GestureDetector(
+                      onTap: () => Get.to(() => const SecuritySettingsScreen()),
 
-                      /// SECURITY SETTINGS OPTION
-                      isSettingsScreen: true,
+                      child: const AccountOptionsWidgets(
+                        optionName: "Security Settings",
+                      
+                        /// SECURITY SETTINGS OPTION
+                        isSettingsScreen: true,
+                      ),
                     ),
                     const AccountOptionsWidgets(
                       optionName: "Delete Account",

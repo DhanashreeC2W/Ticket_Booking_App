@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+import 'package:ticket_booking_app/view/Screens/Payment%20Details%20Screen/payment_details_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/total_container_widget.dart';
 
@@ -67,10 +68,15 @@ class _SliderWidgetState extends State<SliderWidget> {
                       ),
                     ),
                     const TotalContainerWidget(),
-                    const ButtonWidget(
-                        buttonText: "Save changes",
-                        isFullWidth: true,
-                        buttonColor: Color.fromRGBO(0, 100, 210, 1))
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const PaymentDetailsScreen());
+                      },
+                      child: const ButtonWidget(
+                          buttonText: "Save changes",
+                          isFullWidth: true,
+                          buttonColor: Color.fromRGBO(0, 100, 210, 1)),
+                    )
                   ]));
         });
   }

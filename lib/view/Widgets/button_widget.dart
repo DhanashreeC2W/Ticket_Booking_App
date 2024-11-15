@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ///COMMON BUTTON WIDGET USED IN MULTIPLE SCREENS
@@ -19,8 +20,8 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    final deviceHeight = MediaQuery.sizeOf(context).height;
+    final deviceWidth = Get.width;
+    final deviceHeight = Get.height;
 
     ///CONTAINER FOR CUSTOM BUTTON
     return Container(
@@ -38,13 +39,15 @@ class ButtonWidget extends StatelessWidget {
           isIconFront == true
               ? Row(
                   children: [
-                   buttonIcon == null
+                    buttonIcon == null
                         ? const SizedBox()
                         : Icon(
                             buttonIcon!.icon,
                             color: Colors.white,
                             size: deviceWidth * 0.04,
                           ),
+
+                    ///BUTTON NAME
                     Text(
                       buttonText,
                       textAlign: TextAlign.center,
@@ -81,8 +84,8 @@ class ButtonWidget extends StatelessWidget {
                         fontSize: deviceHeight * 0.018,
                       ),
                     ),
-                    const SizedBox(
-                      width: 5,
+                     SizedBox(
+                      width: deviceHeight*0.010,
                     ),
                     buttonIcon == null
                         ? const SizedBox()

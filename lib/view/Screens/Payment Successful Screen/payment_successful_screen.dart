@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,9 +16,9 @@ class PaymentSuccessfulScreen extends StatefulWidget {
 class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    log("${deviceHeight * 0.035}");
+    final deviceHeight = Get.height;
+    final deviceWidth = Get.width;
+   
     return Scaffold(
       backgroundColor: const Color.fromRGBO(0, 100, 210, 1),
       body: Padding(
@@ -64,7 +63,8 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
               SizedBox(
                 height: deviceHeight * 0.05,
               ),
-              ///SEE DETAILS BUTTON
+              ///SEE DETAILS BUTTON WHICH 
+              ///NAVIGATES TO TRANSACTION DETAILS SECTION
               GestureDetector(
                 onTap: () => Get.to(()=>const TransactionDetailsScreen()),
                 child: const ButtonWidget(

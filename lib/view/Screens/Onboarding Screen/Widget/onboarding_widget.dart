@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,9 +22,8 @@ class OnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// HEIGHT AND WIDTH WITH MEDIAQUERY FOR RESPONSIVENESS
-    final deviceHeight = MediaQuery.sizeOf(context).height;
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    log("${ deviceWidth * 0.053}");
+    final deviceHeight = Get.height;
+    final deviceWidth = Get.width;
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -53,11 +51,11 @@ class OnboardingWidget extends StatelessWidget {
             Center(
               child: SmoothPageIndicator(
                 effect: ExpandingDotsEffect(
-                    dotWidth: deviceWidth * 0.053, 
-                    dotHeight: 6,
-                    activeDotColor: const Color.fromRGBO(0,100,210,1),
-                    dotColor: const Color.fromRGBO(225,240,237,1),
-                    ),
+                  dotWidth: deviceWidth * 0.053,
+                  dotHeight: 6,
+                  activeDotColor: const Color.fromRGBO(0, 100, 210, 1),
+                  dotColor: const Color.fromRGBO(225, 240, 237, 1),
+                ),
                 controller: pageController,
                 count: 3,
               ),
@@ -77,7 +75,7 @@ class OnboardingWidget extends StatelessWidget {
             Row(
               children: [
                 /// SKIP BUTTON FOR NAVIGATING TO SIGN UP
-                GestureDetector(  
+                GestureDetector(
                   onTap: () {
                     /// NAVIGATE TO SIGNUPSCREEN ON SKIP
                     Get.to(() => const SignUpScreen());

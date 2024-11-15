@@ -15,6 +15,7 @@ class _PasscodeScreenstate extends State<PasscodeScreen> {
       backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
+          ///PASSCODE SCREEN USING WIDGET
           NumberPinWidget(
             pinType: "Passcode",
             subTitle: "Enter Your Passcode to Proceed the Payment",

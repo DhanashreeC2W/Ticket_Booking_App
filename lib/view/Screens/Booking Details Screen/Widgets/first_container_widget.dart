@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Contact%20Details%20Screen/contact_details_screen.dart';
 
 ///FIRST CONTAINER AT THE TOP OF BOOKING DETAILS SCREEN
 class FirstContainerWidget extends StatelessWidget {
@@ -47,12 +48,17 @@ class FirstContainerWidget extends StatelessWidget {
                     ///14
                   )),
               const Spacer(),
-              Text("Edit",
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w500,
-                    color: const Color.fromRGBO(0, 100, 210, 1),
-                    fontSize: deviceHeight * 0.012,
-                  ))
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => const ContactDetailsScreen());
+                },
+                child: Text("Edit",
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      color: const Color.fromRGBO(0, 100, 210, 1),
+                      fontSize: deviceHeight * 0.012,
+                    )),
+              )
             ],
           ),
 
@@ -92,7 +98,9 @@ class FirstContainerWidget extends StatelessWidget {
                       color: const Color.fromRGBO(0, 100, 210, 1),
                       size: deviceHeight * 0.014,
                     ),
-                    SizedBox(width: deviceWidth*0.01,),
+                    SizedBox(
+                      width: deviceWidth * 0.01,
+                    ),
                     Text("+628123223922",
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w500,
