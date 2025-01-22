@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Screens/Account%20Screen/Widgets/account_options_widgets.dart';
+import 'package:ticket_booking_app/view/Screens/Settings%20Screen/setting_screen.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -73,6 +75,7 @@ class AccountScreen extends StatelessWidget {
                             fontSize: deviceHeight * 0.022, //20
                           ),
                         ),
+
                         ///EMAIL ID
                         Text(
                           "josphamdes@gmail.com",
@@ -82,6 +85,7 @@ class AccountScreen extends StatelessWidget {
                             fontSize: deviceHeight * 0.016, //14
                           ),
                         ),
+
                         ///CONTACT NUMBER
                         Text(
                           "+1 654 785 4462",
@@ -126,10 +130,13 @@ class AccountScreen extends StatelessWidget {
           const AccountOptionsWidgets(
               optionIcon: Icon(Icons.question_mark_outlined),
               optionName: "My Order"),
-          const AccountOptionsWidgets(
-            optionIcon: Icon(Icons.settings_outlined),
-            optionName: "Settings",
-            isDivider: false,
+          GestureDetector(
+            onTap: () => Get.to(() => const SettingsScreen()),
+            child: const AccountOptionsWidgets(
+              optionIcon: Icon(Icons.settings_outlined),
+              optionName: "Settings",
+              isDivider: false,
+            ),
           ),
           const AccountOptionsWidgets(
             optionIcon: Icon(Icons.login_outlined),

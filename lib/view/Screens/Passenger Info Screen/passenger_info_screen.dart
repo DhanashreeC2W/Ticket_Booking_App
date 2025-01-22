@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ticket_booking_app/view/Screens/Booking%20Details%20Screen/booking_details_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Contact%20Details%20Screen/Widget/info_container_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 import 'package:ticket_booking_app/view/Widgets/radio_button_with_text_widget.dart';
@@ -25,7 +24,7 @@ class _PassengerInfoScreenState extends State<PassengerInfoScreen> {
   Widget build(BuildContext context) {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
-    log("${deviceHeight * 0.022}");
+
     return Scaffold(
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         body: Padding(
@@ -99,10 +98,13 @@ class _PassengerInfoScreenState extends State<PassengerInfoScreen> {
               ///SAVE CHANGES BUTTON
               Padding(
                 padding: EdgeInsets.only(top: deviceHeight * 0.05),
-                child: const ButtonWidget(
-                  buttonText: "Save changes",
-                  buttonColor: Color.fromRGBO(0, 100, 210, 1),
-                  isFullWidth: true,
+                child: GestureDetector(
+                  onTap: () => Get.offAll(const BookingDetailsScreen()),
+                  child: const ButtonWidget(
+                    buttonText: "Save changes",
+                    buttonColor: Color.fromRGBO(0, 100, 210, 1),
+                    isFullWidth: true,
+                  ),
                 ),
               )
             ],

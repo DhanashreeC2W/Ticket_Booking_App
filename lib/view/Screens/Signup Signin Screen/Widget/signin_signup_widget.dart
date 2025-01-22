@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Screens/Home%20Screen/home_screen.dart';
 import 'package:ticket_booking_app/view/Screens/Navigation%20Bar/navaigationbar.dart';
 import 'package:ticket_booking_app/view/Screens/Signup%20Signin%20Screen/signin_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
@@ -127,7 +126,7 @@ class SigninSignupWidget extends StatelessWidget {
             height: deviceHeight * 0.052,
           ),
           GestureDetector(
-              onTap: () => Get.to(() => const Navaigationbar()),
+              onTap: () => Get.off(() => const Navaigationbar()),
               child: ButtonWidget(
                 buttonText: signupSignin,
                 buttonColor: const Color.fromRGBO(0, 100, 210, 1),

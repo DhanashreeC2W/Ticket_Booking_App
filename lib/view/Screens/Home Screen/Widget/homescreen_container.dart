@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ticket_booking_app/view/Widgets/radio_button_with_text_widget.dart';
@@ -7,6 +5,7 @@ import 'package:ticket_booking_app/view/Screens/Home%20Screen/Widget/trip_detail
 import 'package:ticket_booking_app/view/Screens/Search%20Result%20Screen/search_result_screen.dart';
 import 'package:ticket_booking_app/view/Widgets/button_widget.dart';
 
+/// HOME SCREEN CONTAINER
 class HomescreenContainer extends StatefulWidget {
   const HomescreenContainer({super.key});
 
@@ -15,7 +14,10 @@ class HomescreenContainer extends StatefulWidget {
 }
 
 class _HomescreenContainerState extends State<HomescreenContainer> {
+  /// VARIABLE TO TRACK SELECTED RADIO BUTTON FOR TRIP TYPE
   int? _tripGroup;
+
+  /// FUNCTION TO DISPLAY A DATE PICKER BOTTOM SHEET
   void dateBottomSheet() {
     showModalBottomSheet(
         context: context,
@@ -24,16 +26,18 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
+                /// DATE PICKER DIALOG FOR SELECTING DEPARTURE DATE
                 Expanded(
                   child: SizedBox(
                     width: MediaQuery.sizeOf(context).width,
                     child: DatePickerDialog(
-                        // helpText: "Select Date",
                         currentDate: DateTime.now(),
                         firstDate: DateTime(2024),
-                        lastDate: DateTime(2025)),
+                        lastDate: DateTime(2027)),
                   ),
                 ),
+
+                /// SEARCH DATE BUTTON
                 const ButtonWidget(
                   buttonText: "Search date",
                   buttonColor: Color.fromRGBO(0, 100, 210, 1),
@@ -47,26 +51,31 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
 
   @override
   Widget build(BuildContext context) {
+    /// DEVICE DIMENSIONS
     final deviceWidth = MediaQuery.sizeOf(context).width;
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    log("${deviceHeight * 0.008}");
+
     return Expanded(
       child: Container(
+        /// PADDING AND DIMENSIONS
         padding: EdgeInsets.only(
           top: deviceHeight * 0.03,
-          left: deviceWidth * 0.06, //16
-          right: deviceWidth * 0.06, //16
+          left: deviceWidth * 0.06, // 16
+          right: deviceWidth * 0.06, // 16
         ),
         height: deviceHeight,
         width: deviceWidth,
         decoration: const BoxDecoration(
-            color: Color.fromRGBO(255, 255, 255, 1),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+          color: Color.fromRGBO(255, 255, 255, 1),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ///ROW FOR 2 RADIO BUTTON
+            /// ROW FOR RADIO BUTTONS (ONE-WAY AND ROUND-TRIP)
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -76,8 +85,7 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
                   buttonName: "One-way",
                 ),
                 SizedBox(
-                  ///18
-                  width: deviceWidth * 0.036,
+                  width: deviceWidth * 0.036, // 18
                 ),
                 RadioButtonWithTextWidget(
                   buttonName: "Round-trip",
@@ -90,7 +98,7 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
               height: deviceHeight * 0.008,
             ),
 
-            ///WIDGET FOR TRIP DETAILS
+            /// TRIP DETAILS WIDGETS
             const TripDetailsWidget(
                 headingText: "From",
                 data: "New York, USA",
@@ -99,6 +107,8 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
                 headingText: "To",
                 data: "Da Nang, Vietnam",
                 icon: Icon(Icons.flight_land_outlined)),
+
+            /// DEPARTURE DATE WIDGET WITH TAP TO OPEN DATE PICKER
             GestureDetector(
               onTap: () {
                 dateBottomSheet();
@@ -108,12 +118,14 @@ class _HomescreenContainerState extends State<HomescreenContainer> {
                   data: "August 28, 2021",
                   icon: Icon(Icons.calendar_month_outlined)),
             ),
+
+            /// TRAVELERS DETAILS WIDGET
             const TripDetailsWidget(
                 headingText: "Travelers",
                 data: "1 Adult, 1 child, 0 Infant",
                 icon: Icon(Icons.person_outline_rounded)),
 
-            ///BUTTON WIDGET FOR SEARCH FLIGHTS BUTTON
+            /// SEARCH FLIGHTS BUTTON
             GestureDetector(
               onTap: () {
                 Get.to(const SearchResultScreen());

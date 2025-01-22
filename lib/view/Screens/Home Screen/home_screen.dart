@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './Widget/homescreen_container.dart';
-import 'package:ticket_booking_app/view/Widgets/back_button_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,10 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.sizeOf(context).width;
     final deviceHeight = MediaQuery.sizeOf(context).height;
-    log("${deviceHeight * 0.038}");
+
     return Scaffold(
         backgroundColor: const Color.fromRGBO(0, 100, 210, 1),
-        //extendBodyBehindAppBar: true,
         body: Column(children: [
           Padding(
             padding: EdgeInsets.only(
@@ -40,11 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         "assets/images/map.png",
                         fit: BoxFit.fill,
                         width: deviceWidth,
-                      ),
-                      const Positioned(
-                        child: BackButtonWidget(
-                          isWhiteColor: true,
-                        ),
                       ),
                       Positioned(
                           left: deviceWidth / 3.6,

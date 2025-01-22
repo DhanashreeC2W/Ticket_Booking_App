@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,7 +19,7 @@ class BookingDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
-    log("${deviceWidth * 0.258}");
+   
     void baggageBottomSheet() {
       showModalBottomSheet(
           backgroundColor: const Color.fromRGBO(255, 255, 255, 1),

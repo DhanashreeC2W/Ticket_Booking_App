@@ -16,7 +16,6 @@ class OnboardingWidget extends StatelessWidget {
     required this.pageController,
     required this.currentIndex,
 
-    ///PASS THE CURRENT PAGE INDEX
   });
 
   @override
@@ -105,7 +104,7 @@ class OnboardingWidget extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     if (currentIndex == 2) {
-                      Get.to(() => const SignUpScreen());
+                      Get.off(() => const SignUpScreen());
                     } else {
                       // Otherwise, go to the next page
                       pageController.nextPage(
