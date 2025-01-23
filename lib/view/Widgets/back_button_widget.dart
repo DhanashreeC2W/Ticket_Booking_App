@@ -8,7 +8,7 @@ class BackButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
+    final deviceHeight = Get.height;
 
     return GestureDetector(
       onTap: () {

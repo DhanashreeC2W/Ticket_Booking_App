@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ticket_booking_app/view/Screens/Onboarding%20Screen/onboard_screen.dart';
+import 'package:ticket_booking_app/view/Onboarding%20Screen/onboard_screen.dart';
 
 void main() {
   runApp(const MainApp());

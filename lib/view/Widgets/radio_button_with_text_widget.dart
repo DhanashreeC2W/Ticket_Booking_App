@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ///RADIO BUTTON WIDGET FOR HOME SCREEN
@@ -21,7 +22,7 @@ class RadioButtonWithTextWidget extends StatefulWidget {
 class _RadioButtonWithTextWidgetState extends State<RadioButtonWithTextWidget> {
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.sizeOf(context).height;
+    final deviceHeight = Get.height;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,

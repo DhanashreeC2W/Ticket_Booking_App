@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Screens/Transaction Details Screen/Widget/transaction_details_screen_widget.dart';
+import '../Transaction Details Screen/Widget/transaction_details_screen_widget.dart';
 
 ///TOTAL CONTAINER WIDGET USED IN TRANSACTION DETAILS SCREEN,AND BOTTOMSHEETS
 class TotalContainerWidget extends StatelessWidget {
