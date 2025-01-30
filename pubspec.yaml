@@ -20,6 +20,8 @@ dependencies:
   flutter_svg: ^1.0.2
   book_my_seat: ^1.0.1
   slide_to_act: ^2.0.2
+  firebase_auth: ^5.4.1
+  firebase_core: ^3.10.1
 
  
 dev_dependencies:

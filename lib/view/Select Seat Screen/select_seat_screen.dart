@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +20,7 @@ class _SelectSeatScreenState extends State<SelectSeatScreen> {
     final deviceHeight = Get.height;
     final deviceWidth = Get.width;
     return Scaffold(
+        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         body: Padding(
             padding: EdgeInsets.only(
               top: deviceHeight * 0.03,
@@ -44,6 +44,9 @@ class _SelectSeatScreenState extends State<SelectSeatScreen> {
                   color: const Color.fromRGBO(23, 24, 24, 1),
                   fontSize: deviceHeight * 0.022,
                 ),
+              ),
+              SizedBox(
+                height: deviceHeight * 0.012,
               ),
 
               ///SEAT BOOKING SECTION USING WIDGET
@@ -108,7 +111,10 @@ class _SelectSeatScreenState extends State<SelectSeatScreen> {
                       ],
                     )
                   : const SizedBox(),
-                  ///SLIDER USING WIDGET
+   SizedBox(
+                height: deviceHeight * 0.012,
+              ),
+              ///SLIDER USING WIDGET
               const SliderWidget(),
             ])));
   }

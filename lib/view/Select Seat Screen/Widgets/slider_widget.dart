@@ -94,7 +94,7 @@ class _SliderWidgetState extends State<SliderWidget> {
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: SlideAction(
-          height: 56, // Adjust the height as needed
+          height: deviceHeight * 0.059,
           sliderRotate: false,
           outerColor: const Color.fromRGBO(218, 235, 255, 1),
           innerColor: const Color.fromRGBO(0, 100, 210, 1),

@@ -32,7 +32,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 ///BACK BUTTON
             const BackButtonWidget(),
-            SizedBox(height: deviceHeight * 0.0),
+             SizedBox(height: deviceHeight * 0.014),
 
             ///HEADING TEXT
             Text(

@@ -78,7 +78,7 @@ class NumberPinWidget extends StatelessWidget {
               numberOfFields: 6,
               showFieldAsBox: true,
               autoFocus: true,
-              onSubmit: (value) => Get.to(() => const ConfirmPinScreen()),
+             // onSubmit: (value) => Get.to(() => const ConfirmPinScreen()),
               filled: true,
               enabledBorderColor: Colors.transparent,
               focusedBorderColor: Colors.transparent,

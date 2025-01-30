@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_booking_app/view/Account%20Screen/Widgets/account_options_widgets.dart';
+import 'package:ticket_booking_app/view/Delete%20Account%20Screen/delete_account.dart';
 import 'package:ticket_booking_app/view/Security%20Settings%20Screen/security_settings_screen.dart';
 import 'package:ticket_booking_app/view/Settings%20Screen/Widgets/settings_bold_catergory_widget.dart';
 import 'package:ticket_booking_app/view/Email%20And%20Mobile%20Number%20Screen/email_mobile_no_screen.dart';
@@ -33,14 +33,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
               right: deviceWidth * 0.04, //16
               bottom: deviceHeight * 0.02, //26
             ),
-            child: SizedBox(
-              height: deviceHeight / 1.4,
+            child: SingleChildScrollView(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ///BACK BUTTON
                     const BackButtonWidget(),
+                    SizedBox(height: deviceHeight * 0.014),
 
                     ///SCREEN NAME AFTER BACKBUTTON
                     Text(
@@ -55,6 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     /// SETTINGS CATEGORY AND OPTIONS USING WIDGETS
                     const SettingsBoldCatergoryWidget(
                         settingsCatergory: "General"),
+                    SizedBox(height: deviceHeight * 0.014),
 
                     /// GENERAL SETTINGS CATEGORY
                     GestureDetector(
@@ -83,7 +84,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         isSettingsScreen: true,
                       ),
                     ),
-                    const SwitchButtonWidget(switchButtonText: "Location"),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: SwitchButtonWidget(switchButtonText: "Location"),
+                    ),
 
                     /// SWICTH FOR LOCATION SETTINGS
                     const SettingsBoldCatergoryWidget(
@@ -103,19 +107,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     GestureDetector(
                       onTap: () => Get.to(() => const SecuritySettingsScreen()),
-
                       child: const AccountOptionsWidgets(
                         optionName: "Security Settings",
-                      
+
                         /// SECURITY SETTINGS OPTION
                         isSettingsScreen: true,
                       ),
                     ),
-                    const AccountOptionsWidgets(
-                      optionName: "Delete Account",
+                    GestureDetector(
+                      onTap: () => Get.to(() => const DeleteAccount()),
+                      child: const AccountOptionsWidgets(
+                        optionName: "Delete Account",
 
-                      /// DELETE ACCOUNT OPTION
-                      isSettingsScreen: true,
+                        /// DELETE ACCOUNT OPTION
+                        isSettingsScreen: true,
+                      ),
                     ),
                     const SettingsBoldCatergoryWidget(
                         settingsCatergory: "Other"),
@@ -141,24 +147,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
 
                     ///ROW FOR RATE APP OPTION WITH VERSION
-                    Row(
-                      children: [
-                        Text(
-                          "Rate App",
-                          style: GoogleFonts.inter(
-                              color: const Color.fromRGBO(37, 40, 49, 0.9),
-                              fontWeight: FontWeight.w400,
-                              fontSize: deviceHeight * 0.016),
-                        ),
-                        const Spacer(),
-                        Text(
-                          "v4.87.2",
-                          style: GoogleFonts.inter(
-                              color: const Color.fromRGBO(37, 40, 49, 0.7),
-                              fontWeight: FontWeight.w400,
-                              fontSize: deviceHeight * 0.016),
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Rate App",
+                            style: GoogleFonts.inter(
+                                color: const Color.fromRGBO(37, 40, 49, 0.9),
+                                fontWeight: FontWeight.w400,
+                                fontSize: deviceHeight * 0.016),
+                          ),
+                          const Spacer(),
+                          Text(
+                            "v4.87.2",
+                            style: GoogleFonts.inter(
+                                color: const Color.fromRGBO(37, 40, 49, 0.7),
+                                fontWeight: FontWeight.w400,
+                                fontSize: deviceHeight * 0.016),
+                          ),
+                        ],
+                      ),
                     )
                   ]),
             )));

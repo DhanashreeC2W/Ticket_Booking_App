@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticket_booking_app/view/Home%20Screen/home_screen.dart';
+import 'package:ticket_booking_app/view/Navigation%20Bar/navaigationbar.dart';
 import 'package:ticket_booking_app/view/Transaction%20Details%20Screen/Widget/refund_ticket_button_widget.dart';
 import 'package:ticket_booking_app/view/Transaction%20Details%20Screen/Widget/top_container.dart';
 import 'package:ticket_booking_app/view/Transaction%20Details%20Screen/Widget/transaction_details_screen_widget.dart';
@@ -84,7 +84,7 @@ class _TransactionDetailsScreenState extends State<TransactionDetailsScreen> {
 
             ///ENTER BUTTON WHICH NAVIGATES TO HOME SCREEN
             GestureDetector(
-              onTap: () => Get.to(() => const HomeScreen()),
+              onTap: () => Get.to(() => const Navaigationbar()),
               child: const ButtonWidget(
                 buttonText: "Enter",
                 buttonColor: Color.fromRGBO(0, 100, 210, 1),
